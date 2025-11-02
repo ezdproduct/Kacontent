@@ -1,11 +1,15 @@
 import Link from "next/link";
+import { AuthorInfo } from "./author-info";
 
-interface Post {
+export interface Post {
   imgSrc: string;
   category: string;
-  author: string;
   title: string;
   excerpt: string;
+  author: string;
+  authorAvatar: string;
+  date: string;
+  featured?: boolean;
 }
 
 interface BlogPostCardProps {
@@ -14,32 +18,24 @@ interface BlogPostCardProps {
 
 export const BlogPostCard = ({ post }: BlogPostCardProps) => {
   return (
-    <div className="bg-card rounded-2xl shadow-lg overflow-hidden flex flex-col group">
-      <div className="relative">
-        <Link href="#" className="block overflow-hidden">
-          <img
-            src={post.imgSrc}
-            alt={`Ảnh bìa cho bài viết ${post.title}`}
-            className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
-          />
+    <div className="group flex flex-col">
+      <Link href="#" className="block overflow-hidden rounded-2xl mb-6">
+        <img
+          src={post.imgSrc}
+          alt={`Ảnh bìa cho bài viết ${post.title}`}
+          className="w-full aspect-[16/10] object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+      </Link>
+      <p className="text-primary font-semibold text-sm mb-2">{post.category}</p>
+      <h3 className="text-xl font-bold mb-3 text-foreground">
+        <Link href="#" className="hover:text-primary/80 transition-colors">
+          {post.title}
         </Link>
-        <div className="absolute top-4 left-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
-          {post.category}
-        </div>
-        <div className="absolute bottom-4 right-4 bg-black/50 text-white text-xs px-3 py-1 rounded-full backdrop-blur-sm">
-          {post.author}
-        </div>
-      </div>
-      <div className="p-6 flex-grow flex flex-col">
-        <h3 className="text-xl font-bold mb-3 text-foreground">
-          <Link href="#" className="hover:text-primary transition-colors">
-            {post.title}
-          </Link>
-        </h3>
-        <p className="text-muted-foreground text-sm line-clamp-3 flex-grow">
-          {post.excerpt}
-        </p>
-      </div>
+      </h3>
+      <p className="text-muted-foreground mb-6 line-clamp-2 flex-grow">
+        {post.excerpt}
+      </p>
+      <AuthorInfo avatar={post.authorAvatar} name={post.author} date={post.date} />
     </div>
   );
 };

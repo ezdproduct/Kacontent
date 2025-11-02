@@ -11,6 +11,8 @@ export const LatestPosts = () => {
       title: "ĐIỂM THI ĐẠI HỌC CHỈ LÀ KHỞI ĐẦU",
       excerpt:
         "Gửi các bạn 2k7, Hôm nay là ngày các bạn nhận được điểm thi, nhiều người sẽ vui mừng vì điểm như mong đợi, nhiều...",
+      authorAvatar: "/images/nguyen-thuy-khanh-portrait.jpg",
+      date: "22 Jan 2024",
     },
     {
       imgSrc: "https://images.unsplash.com/photo-1536702152972-d209d3321934?q=80&w=2070&auto=format&fit=crop",
@@ -19,6 +21,8 @@ export const LatestPosts = () => {
       title: "CHÚNG TA KHÔNG THỂ GIỎI TẤT CẢ MỌI THỨ",
       excerpt:
         "Chúng ta không thể giỏi tất cả mọi thứ, đó là điều bình thường. Có một sự thật mà không mấy ai muốn thừa nhận.",
+      authorAvatar: "/images/nguyen-thuy-khanh-portrait.jpg",
+      date: "21 Jan 2024",
     },
     {
       imgSrc: "https://images.unsplash.com/photo-1599237933330-768471523693?q=80&w=1932&auto=format&fit=crop",
@@ -27,6 +31,8 @@ export const LatestPosts = () => {
       title: "CHIẾN LƯỢC - TẦM NHÌN VÀ KHẢ NĂNG THỰC THI",
       excerpt:
         "Chiến lược – tầm nhìn chỉ là con số 0, Nếu đội ngũ không có khả năng thực thi. Nếu gọi chiến lược là tấm...",
+      authorAvatar: "/images/nguyen-thuy-khanh-portrait.jpg",
+      date: "20 Jan 2024",
     },
   ];
 
