@@ -15,7 +15,7 @@ export const Header = () => {
   ];
 
   return (
-    <nav className="bg-card shadow-sm sticky top-0 z-50">
+    <nav className="bg-background/80 backdrop-blur-sm shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -32,7 +32,7 @@ export const Header = () => {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-muted-foreground hover:text-primary font-medium"
+                className="text-muted-foreground hover:text-primary font-medium transition-colors"
               >
                 {link.label}
               </Link>
@@ -41,10 +41,10 @@ export const Header = () => {
 
           {/* Icons - Desktop */}
           <div className="hidden md:flex items-center space-x-4">
-            <button className="text-muted-foreground hover:text-primary">
+            <button className="text-muted-foreground hover:text-primary transition-colors">
               <Search className="w-6 h-6" />
             </button>
-            <button className="text-muted-foreground hover:text-primary">
+            <button className="text-muted-foreground hover:text-primary transition-colors">
               <User className="w-6 h-6" />
             </button>
           </div>

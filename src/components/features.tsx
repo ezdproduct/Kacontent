@@ -32,7 +32,7 @@ export const Features = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-card p-6 rounded-lg shadow-lg border border-border"
+              className="bg-card p-8 rounded-2xl shadow-lg border border-border transition-transform duration-300 hover:scale-105 hover:shadow-xl"
             >
               {feature.icon}
               <h3 className="text-xl font-bold mb-2 text-foreground">{feature.title}</h3>

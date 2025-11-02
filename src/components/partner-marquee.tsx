@@ -21,11 +21,11 @@ const partnerLogos = [
 const MarqueeContent = () => (
   <>
     {partnerLogos.map((partner, index) => (
-      <div key={index} className="flex-shrink-0 w-48 h-20 md:w-64 md:h-24 relative opacity-80 hover:opacity-100 transition-opacity duration-300">
+      <div key={index} className="flex-shrink-0 w-48 h-20 md:w-64 md:h-24 relative opacity-60 hover:opacity-100 transition-opacity duration-300">
         <img
           src={partner.src}
           alt={partner.alt}
-          className="object-contain w-full h-full filter brightness-0 invert"
+          className="object-contain w-full h-full"
         />
       </div>
     ))}
@@ -34,8 +34,8 @@ const MarqueeContent = () => (
 
 export const PartnerMarquee = () => {
   return (
-    <div className="mt-12 overflow-hidden py-8 border-y border-border bg-foreground group">
-      <h3 className="text-sm font-semibold text-background uppercase tracking-wider mb-6 text-center">
+    <div className="mt-12 overflow-hidden py-8 border-y border-border bg-card group">
+      <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-6 text-center">
         Với sự đồng hành của các đối tác hàng đầu
       </h3>
       <div className="flex whitespace-nowrap">
