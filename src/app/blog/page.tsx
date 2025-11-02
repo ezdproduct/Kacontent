@@ -79,7 +79,7 @@ export default function BlogPage() {
     <div className="bg-background text-foreground">
       <Header />
       <main>
-        <section className="py-12 lg:py-20">
+        <section className="pt-8 pb-12 lg:pt-12 lg:pb-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             {featuredPost && <FeaturedPost post={featuredPost} />}
 
