@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div className="bg-background text-foreground">
       <Header />
-      <main>
+      <main className="animate-fade-in">
         <Hero />
         <Features />
         <About />

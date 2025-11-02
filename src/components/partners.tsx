@@ -24,22 +24,18 @@ export const Partners = () => {
           <p className="text-lg font-semibold text-muted-foreground">
             Được tin tưởng bởi các thương hiệu hàng đầu
           </p>
-          <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-8 gap-y-12 place-items-center">
+          <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
             {partnerLogos.map((logo, index) => (
               <div
                 key={index}
-                className="h-10 w-32 bg-muted-foreground/50 hover:bg-primary transition-all duration-300"
-                style={{
-                  maskImage: `url(${logo.src})`,
-                  maskSize: 'contain',
-                  maskRepeat: 'no-repeat',
-                  maskPosition: 'center',
-                  WebkitMaskImage: `url(${logo.src})`,
-                  WebkitMaskSize: 'contain',
-                  WebkitMaskRepeat: 'no-repeat',
-                  WebkitMaskPosition: 'center',
-                }}
-              />
+                className="bg-card p-6 rounded-2xl shadow-lg border border-border flex items-center justify-center transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/10"
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="h-10 object-contain filter grayscale hover:filter-none transition-all duration-300"
+                />
+              </div>
             ))}
           </div>
         </div>

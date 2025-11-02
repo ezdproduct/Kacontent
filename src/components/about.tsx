@@ -1,5 +1,6 @@
-import Image from "next/image";
 import { MoveRight } from "lucide-react";
+import { Button } from "./ui/button";
+import Link from "next/link";
 
 export const About = () => {
   return (
@@ -31,13 +32,12 @@ export const About = () => {
                 Mình giúp doanh nghiệp và đội ngũ của bạn nhìn thấy rõ mục tiêu, kể câu chuyện thương hiệu một cách mạch lạc — để mỗi nội dung không chỉ “hay”, mà còn “hiệu quả”.
               </p>
             </div>
-            <a
-              href="#"
-              className="inline-flex items-center gap-2 mt-8 bg-primary text-primary-foreground font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-primary/90 transition duration-300 group"
-            >
-              Xem chi tiết câu chuyện
-              <MoveRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </a>
+            <Button asChild size="lg" className="mt-8 group">
+              <Link href="#">
+                Xem chi tiết câu chuyện
+                <MoveRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
           </div>
         </div>
       </div>
