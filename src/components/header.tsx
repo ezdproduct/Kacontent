@@ -63,7 +63,7 @@ export const Header = () => {
                 href={link.href}
                 className={cn(
                   "font-bold transition-colors duration-300",
-                  isScrolled ? "text-primary-foreground/80 hover:text-primary-foreground" : "text-primary hover:text-primary/80"
+                  isScrolled ? "text-primary-foreground/80 hover:text-primary-foreground" : "text-foreground hover:text-primary"
                 )}
               >
                 {link.label}
@@ -75,13 +75,13 @@ export const Header = () => {
           <div className="hidden md:flex items-center space-x-4">
             <button className={cn(
               "transition-colors duration-300",
-              isScrolled ? "text-primary-foreground/80 hover:text-primary-foreground" : "text-primary hover:text-primary/80"
+              isScrolled ? "text-primary-foreground/80 hover:text-primary-foreground" : "text-foreground hover:text-primary"
             )}>
               <Search className="w-6 h-6" />
             </button>
             <button className={cn(
               "transition-colors duration-300",
-              isScrolled ? "text-primary-foreground/80 hover:text-primary-foreground" : "text-primary hover:text-primary/80"
+              isScrolled ? "text-primary-foreground/80 hover:text-primary-foreground" : "text-foreground hover:text-primary"
             )}>
               <User className="w-6 h-6" />
             </button>
@@ -94,7 +94,7 @@ export const Header = () => {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={cn(
                 "transition-colors duration-300",
-                isScrolled ? "text-primary-foreground" : "text-primary"
+                isScrolled ? "text-primary-foreground" : "text-foreground"
               )}
             >
               <Menu className="w-6 h-6" />
