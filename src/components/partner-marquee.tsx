@@ -1,41 +1,43 @@
 import React from 'react';
+import Image from 'next/image';
 
-const partners = [
-  "shondo",
-  "COOLMATE",
-  "CONVERSE",
-  "haravan",
-  "GC GROUP",
-  "TikPlus",
-  // Lặp lại danh sách để đảm bảo hiệu ứng chạy liên tục
-  "shondo",
-  "COOLMATE",
-  "CONVERSE",
-  "haravan",
-  "GC GROUP",
-  "TikPlus",
+const partnerLogos = [
+  { src: "/logos/partners/unilever.png", alt: "Unilever" },
+  { src: "/logos/partners/suntory-pepsico.png", alt: "Suntory PepsiCo" },
+  { src: "/logos/partners/prudential.png", alt: "Prudential" },
+  { src: "/logos/partners/wwf.png", alt: "WWF" },
+  { src: "/logos/partners/who.png", alt: "World Health Organization" },
+  { src: "/logos/partners/lazada.png", alt: "Lazada" },
+  { src: "/logos/partners/toshiba.png", alt: "Toshiba" },
+  { src: "/logos/partners/rohto.png", alt: "Rohto" },
+  { src: "/logos/partners/vietcombank.png", alt: "Vietcombank" },
+  { src: "/logos/partners/frieslandcampina.png", alt: "FrieslandCampina" },
+  { src: "/logos/partners/honda.png", alt: "Honda" },
+  { src: "/logos/partners/danisa.png", alt: "Danisa" },
+  { src: "/logos/partners/maxilite.png", alt: "Maxilite Dulux" },
+  { src: "/logos/partners/shopee.png", alt: "Shopee" },
+  { src: "/logos/partners/mitsubishi.png", alt: "Mitsubishi" },
 ];
+
+// Lặp lại danh sách để đảm bảo hiệu ứng chạy liên tục
+const partners = [...partnerLogos, ...partnerLogos];
 
 export const PartnerMarquee = () => {
   return (
-    <div className="mt-12 overflow-hidden py-4 border-y border-gray-200 bg-gray-50">
-      <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4 text-center">
+    <div className="mt-12 overflow-hidden py-8 border-y border-gray-200 bg-white">
+      <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-6 text-center">
         Với sự đồng hành của các đối tác hàng đầu
       </h3>
       <div className="flex whitespace-nowrap">
-        <div className="flex space-x-16 animate-marquee">
+        <div className="flex space-x-16 animate-marquee items-center">
           {partners.map((partner, index) => (
-            <span key={index} className="text-3xl font-bold text-gray-400 opacity-70 hover:opacity-100 transition duration-300">
-              {partner}
-            </span>
-          ))}
-        </div>
-        {/* Lặp lại nội dung để tạo hiệu ứng liền mạch */}
-        <div className="flex space-x-16 animate-marquee">
-          {partners.map((partner, index) => (
-            <span key={index + partners.length} className="text-3xl font-bold text-gray-400 opacity-70 hover:opacity-100 transition duration-300">
-              {partner}
-            </span>
+            <div key={index} className="flex-shrink-0 w-32 h-10 relative opacity-70 hover:opacity-100 transition duration-300">
+              <img
+                src={partner.src}
+                alt={partner.alt}
+                className="object-contain w-full h-full filter grayscale brightness-0 invert"
+              />
+            </div>
           ))}
         </div>
       </div>
