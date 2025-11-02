@@ -1,11 +1,10 @@
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
-import { CompanyIntro } from "@/components/company-intro";
+import { PartnerMarquee } from "@/components/partner-marquee";
 import { Features } from "@/components/features";
 import { About } from "@/components/about";
 import { LatestPosts } from "@/components/latest-posts";
 import { Footer } from "@/components/footer";
-import { Partners } from "@/components/partners";
 import { Achievements } from "@/components/achievements";
 
 export default function Home() {
@@ -14,10 +13,9 @@ export default function Home() {
       <Header />
       <main className="animate-fade-in">
         <Hero />
-        <CompanyIntro />
+        <PartnerMarquee />
         <Features />
         <About />
-        <Partners />
         <Achievements />
         <LatestPosts />
       </main>
