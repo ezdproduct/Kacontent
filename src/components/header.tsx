@@ -24,6 +24,7 @@ export const Header = () => {
     { href: "/courses", label: "Khóa Học" },
     { href: "/resource", label: "Resource" },
     { href: "/blog", label: "Blog" },
+    { href: "/podcast", label: "Podcast" },
     { href: "/affiliate", label: "Affiliate" },
     { href: "/contact", label: "Liên Hệ" },
   ];
