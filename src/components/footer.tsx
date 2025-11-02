@@ -10,8 +10,8 @@ export const Footer = () => {
             {/* Cột 1: Giới thiệu */}
             <div>
               <Link href="/" className="flex items-center gap-2">
-                <div className="h-8 w-8 logo-mask bg-primary" />
-                <span className="text-lg font-bold text-primary">KA Content</span>
+                <div className="h-8 w-8 logo-mask bg-primary-foreground" />
+                <span className="text-lg font-bold text-primary-foreground">KA Content</span>
               </Link>
               <p className="mt-4 text-sm text-muted-foreground">
                 Chia sẻ kiến thức, tư duy và trải nghiệm về xây dựng nội dung đa
