@@ -23,7 +23,7 @@ const MarqueeContent = () => (
     {partnerLogos.map((logo, index) => (
       <div
         key={index}
-        className="h-10 w-32 bg-muted-foreground/50 hover:bg-primary transition-all duration-300"
+        className="h-24 w-64 bg-muted-foreground/50 hover:bg-primary transition-all duration-300"
         style={{
           maskImage: `url(${logo.src})`,
           maskSize: 'contain',
@@ -48,7 +48,7 @@ export const PartnerMarquee = () => {
         </p>
       </div>
       <div className="flex whitespace-nowrap">
-        <div className="flex space-x-16 animate-marquee items-center">
+        <div className="flex space-x-8 animate-marquee items-center">
           <MarqueeContent />
           <MarqueeContent />
         </div>
