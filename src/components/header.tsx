@@ -8,11 +8,10 @@ export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: "#", label: "Sharing" },
-    { href: "#", label: "Podcast" },
-    { href: "#", label: "Toolbox" },
-    { href: "#", label: "Articles" },
-    { href: "#", label: "Trợ giúp" },
+    { href: "#", label: "Khóa Học" },
+    { href: "#", label: "Mẫu Content" },
+    { href: "#", label: "Blog" },
+    { href: "#", label: "Liên Hệ" },
   ];
 
   return (
