@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const About = () => {
   return (
-    <section className="py-16 lg:py-24 border-t border-border">
+    <section className="py-12 lg:py-20 border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Cột hình ảnh */}
