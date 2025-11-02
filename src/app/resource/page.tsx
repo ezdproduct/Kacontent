@@ -3,32 +3,19 @@
 import { useState, useEffect } from "react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { ResourceCard } from "@/components/resource-card";
-import { EbookCard, Ebook } from "@/components/ebook-card";
+import { ResourceCard, Resource } from "@/components/resource-card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { PageHeader } from "@/components/page-header";
-import { FileText, Bot, Workflow } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
-// Unified Resource type
-interface Resource {
-  type: 'Template' | 'Ebook';
-  title: string;
-  description: string;
-  category: string;
-  icon?: React.ReactNode;
-  imgSrc?: string;
-  author?: string;
-}
-
 const allResources: Resource[] = [
-    { type: 'Template', icon: <FileText className="w-8 h-8 text-primary" />, title: "Mẫu Bài Viết Blog Chuẩn SEO", description: "Template bài viết blog được tối ưu hóa cho SEO...", category: "Content" },
-    { type: 'Ebook', imgSrc: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1974&auto=format&fit=crop", title: "Bộ Prompt ChatGPT Cho Content Creator", author: "KA Content", description: "Hơn 50 prompt ChatGPT được thiết kế đặc biệt...", category: "AI" },
-    { type: 'Template', icon: <Workflow className="w-8 h-8 text-primary" />, title: "Mẫu Quy Trình Email Marketing", description: "Chuỗi email tự động để chào mừng người dùng mới...", category: "Automation" },
-    { type: 'Ebook', imgSrc: "https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=2070&auto=format&fit=crop", title: "Bộ 30 Tiêu Đề 'Gây Sốt'", author: "KA Content", description: "Các công thức tiêu đề đã được kiểm chứng...", category: "Content" },
-    { type: 'Template', icon: <Workflow className="w-8 h-8 text-primary" />, title: "Checklist Tự Động Hóa Fanpage", description: "Từng bước thiết lập chatbot, tin nhắn trả lời tự động...", category: "Automation" },
-    { type: 'Ebook', imgSrc: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=2070&auto=format&fit=crop", title: "Hướng Dẫn Sử Dụng Midjourney", author: "KA Content", description: "Các câu lệnh và mẹo thực tế để tạo ảnh minh họa...", category: "AI" },
+    { type: 'Template', imgSrc: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop", title: "Mẫu Bài Viết Blog Chuẩn SEO", category: "Content" },
+    { type: 'Ebook', imgSrc: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=1974&auto=format&fit=crop", title: "Bộ Prompt ChatGPT Cho Content Creator", author: "KA Content", category: "AI" },
+    { type: 'Template', imgSrc: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=2070&auto=format&fit=crop", title: "Mẫu Quy Trình Email Marketing", category: "Automation" },
+    { type: 'Ebook', imgSrc: "https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=2070&auto=format&fit=crop", title: "Bộ 30 Tiêu Đề 'Gây Sốt'", author: "KA Content", category: "Content" },
+    { type: 'Template', imgSrc: "https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=2070&auto=format&fit=crop", title: "Checklist Tự Động Hóa Fanpage", category: "Automation" },
+    { type: 'Ebook', imgSrc: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=2070&auto=format&fit=crop", title: "Hướng Dẫn Sử Dụng Midjourney", author: "KA Content", category: "AI" },
 ];
 
 const allCategories = ["Tất cả", ...new Set(allResources.map((res) => res.category))];
@@ -99,13 +86,9 @@ export default function ResourcePage() {
               <div className="md:col-span-3">
                 {filteredResources.length > 0 ? (
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {filteredResources.map((resource, index) => 
-                      resource.type === 'Template' ? (
-                        <ResourceCard key={index} resource={resource as any} />
-                      ) : (
-                        <EbookCard key={index} ebook={resource as any} />
-                      )
-                    )}
+                    {filteredResources.map((resource, index) => (
+                      <ResourceCard key={index} resource={resource} />
+                    ))}
                   </div>
                 ) : (
                   <div className="text-center py-16 border rounded-lg">
