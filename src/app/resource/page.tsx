@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { PageHeader } from "@/components/page-header";
 import { FileText, Bot, Workflow } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Separator } from "@/components/ui/separator";
 
 const allTemplates = [
     { icon: <FileText className="w-8 h-8 text-primary" />, title: "Mẫu Bài Viết Blog Chuẩn SEO", description: "Template bài viết blog được tối ưu hóa cho SEO, giúp bạn dễ dàng leo top Google.", category: "Content", type: "Template" },
@@ -30,23 +31,20 @@ const templateCategories = ["Tất cả", ...new Set(allTemplates.map((res) => r
 const trendingEbooks = allEbooks.filter(ebook => ebook.trending);
 
 export default function ResourcePage() {
-  const [activeTab, setActiveTab] = useState<'template' | 'ebook'>('template');
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("Tất cả");
   const [filteredTemplates, setFilteredTemplates] = useState(allTemplates);
 
   useEffect(() => {
-    if (activeTab === 'template') {
-      let resources = [...allTemplates];
-      if (searchTerm) {
-        resources = resources.filter((res) => res.title.toLowerCase().includes(searchTerm.toLowerCase()));
-      }
-      if (selectedCategory !== "Tất cả") {
-        resources = resources.filter((res) => res.category === selectedCategory);
-      }
-      setFilteredTemplates(resources);
+    let resources = [...allTemplates];
+    if (searchTerm) {
+      resources = resources.filter((res) => res.title.toLowerCase().includes(searchTerm.toLowerCase()));
     }
-  }, [activeTab, searchTerm, selectedCategory]);
+    if (selectedCategory !== "Tất cả") {
+      resources = resources.filter((res) => res.category === selectedCategory);
+    }
+    setFilteredTemplates(resources);
+  }, [searchTerm, selectedCategory]);
 
   return (
     <div className="bg-background text-foreground">
@@ -58,59 +56,51 @@ export default function ResourcePage() {
               title="Kho Tài Nguyên Miễn Phí"
               subtitle="Tải xuống các mẫu content, kịch bản automation, và prompt AI được thiết kế để giúp bạn tăng tốc quy trình làm việc và nâng cao chất lượng nội dung."
             />
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {/* Vertical Tabs */}
-              <div className="md:col-span-1">
-                <div className="flex flex-row md:flex-col gap-2">
-                  <Button variant={activeTab === 'template' ? 'default' : 'outline'} onClick={() => setActiveTab('template')} className="w-full justify-start">Kho Template</Button>
-                  <Button variant={activeTab === 'ebook' ? 'default' : 'outline'} onClick={() => setActiveTab('ebook')} className="w-full justify-start">Kho Ebook</Button>
+            
+            <div className="space-y-16">
+              {/* Template Section */}
+              <div>
+                <h2 className="text-3xl font-bold mb-8">Kho Template</h2>
+                <div className="mb-8">
+                  <Input placeholder="Tìm kiếm template..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {templateCategories.map((category) => (
+                      <Button key={category} variant={selectedCategory === category ? "default" : "outline"} onClick={() => setSelectedCategory(category)}>{category}</Button>
+                    ))}
+                  </div>
                 </div>
+                {filteredTemplates.length > 0 ? (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {filteredTemplates.map((resource, index) => (<ResourceCard key={index} resource={resource} />))}
+                  </div>
+                ) : (
+                  <div className="text-center py-16"><h3 className="text-2xl font-bold">Không tìm thấy template phù hợp</h3><p className="text-muted-foreground mt-2">Vui lòng thử lại.</p></div>
+                )}
               </div>
 
-              {/* Content */}
-              <div className="md:col-span-3">
-                {activeTab === 'template' ? (
-                  <>
-                    <div className="mb-8">
-                      <Input placeholder="Tìm kiếm template..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
-                      <div className="flex flex-wrap gap-2 mt-4">
-                        {templateCategories.map((category) => (
-                          <Button key={category} variant={selectedCategory === category ? "default" : "outline"} onClick={() => setSelectedCategory(category)}>{category}</Button>
-                        ))}
-                      </div>
-                    </div>
-                    {filteredTemplates.length > 0 ? (
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {filteredTemplates.map((resource, index) => (<ResourceCard key={index} resource={resource} />))}
-                      </div>
-                    ) : (
-                      <div className="text-center py-16"><h3 className="text-2xl font-bold">Không tìm thấy tài nguyên phù hợp</h3><p className="text-muted-foreground mt-2">Vui lòng thử lại.</p></div>
-                    )}
-                  </>
-                ) : (
-                  <div className="space-y-12">
-                    {/* Trending Ebooks */}
-                    <div>
-                      <h2 className="text-2xl font-bold mb-4">Ebook Nổi Bật</h2>
-                      <Carousel opts={{ align: "start", loop: true }} className="w-full">
-                        <CarouselContent>
-                          {trendingEbooks.map((ebook, index) => (
-                            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3"><EbookCard ebook={ebook} /></CarouselItem>
-                          ))}
-                        </CarouselContent>
-                        <CarouselPrevious />
-                        <CarouselNext />
-                      </Carousel>
-                    </div>
-                    {/* All Ebooks */}
-                    <div>
-                      <h2 className="text-2xl font-bold mb-4">Tất cả Ebook</h2>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {allEbooks.map((ebook, index) => (<EbookCard key={index} ebook={ebook} />))}
-                      </div>
-                    </div>
+              <Separator />
+
+              {/* Ebook Section */}
+              <div className="space-y-12">
+                <h2 className="text-3xl font-bold">Kho Ebook</h2>
+                <div>
+                  <h3 className="text-2xl font-bold mb-4">Ebook Nổi Bật</h3>
+                  <Carousel opts={{ align: "start", loop: true }} className="w-full">
+                    <CarouselContent>
+                      {trendingEbooks.map((ebook, index) => (
+                        <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3"><EbookCard ebook={ebook} /></CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious />
+                    <CarouselNext />
+                  </Carousel>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-4">Tất cả Ebook</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {allEbooks.map((ebook, index) => (<EbookCard key={index} ebook={ebook} />))}
                   </div>
-                )}
+                </div>
               </div>
             </div>
           </div>
