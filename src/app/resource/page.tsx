@@ -52,17 +52,8 @@ export default function ResourcePage() {
     <div className="bg-background text-foreground">
       <Header />
       <main>
-        <section className="py-12 lg:py-20">
+        <section className="pt-8 pb-12 lg:pt-12 lg:pb-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h1 className="text-4xl lg:text-5xl font-extrabold text-foreground">
-                Kho Tài Nguyên Miễn Phí
-              </h1>
-              <p className="text-lg text-muted-foreground mt-4 max-w-3xl mx-auto">
-                Tải xuống các mẫu content, kịch bản automation, và prompt AI được thiết kế để giúp bạn tăng tốc quy trình làm việc và nâng cao chất lượng nội dung.
-              </p>
-            </div>
-
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {/* Vertical Tabs */}
               <div className="md:col-span-1">
