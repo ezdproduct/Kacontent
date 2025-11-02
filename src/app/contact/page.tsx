@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 
 export default function ContactPage() {
@@ -112,7 +112,7 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="bg-primary/10 p-3 rounded-full">
-                    <MapPin className="w-6 h-6 text-primary" />
+                    <div className="w-6 h-6 logo-mask bg-primary" />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold">Địa chỉ</h3>
