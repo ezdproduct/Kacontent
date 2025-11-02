@@ -25,7 +25,7 @@ const MarqueeContent = () => (
         <img
           src={partner.src}
           alt={partner.alt}
-          className="object-contain w-full h-full filter grayscale invert"
+          className="object-contain w-full h-full filter brightness-0 invert"
         />
       </div>
     ))}
