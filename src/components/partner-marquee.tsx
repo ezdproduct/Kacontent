@@ -31,7 +31,7 @@ export const PartnerMarquee = () => {
       <div className="flex whitespace-nowrap">
         <div className="flex space-x-16 animate-marquee items-center">
           {partners.map((partner, index) => (
-            <div key={index} className="flex-shrink-0 w-32 h-10 relative opacity-70 hover:opacity-100 transition duration-300">
+            <div key={index} className="flex-shrink-0 w-40 h-12 relative opacity-80 hover:opacity-100 transition duration-300">
               <img
                 src={partner.src}
                 alt={partner.alt}
