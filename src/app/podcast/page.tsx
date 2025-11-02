@@ -3,28 +3,19 @@
 import { useState, useEffect } from "react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { FeaturedPodcastCard } from "@/components/featured-podcast-card";
 import { PodcastCard } from "@/components/podcast-card";
 import { PodcastPlayer } from "@/components/podcast-player";
 import { Podcast } from "@/lib/types";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { PageHeader } from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 
-const trendingThisWeek: Podcast = {
-  imgSrc: "https://images.unsplash.com/photo-1612073464778-42d3b74f7e3c?q=80&w=2070&auto=format&fit=crop",
-  title: "Content Sáng Tạo: Từ Ý Tưởng Đến Thực Thi",
-  author: "Khanh Nguyễn",
-  duration: "45:30 min",
-  category: "Sáng tạo",
-};
-
 const allPodcasts: Podcast[] = [
-  { imgSrc: "https://images.unsplash.com/photo-1598214886806-2c88b8185447?q=80&w=1925&auto=format&fit=crop", title: "Xây Dựng Thương Hiệu Cá Nhân", author: "KA Content Team", duration: "35:15 min", category: "Branding" },
   { imgSrc: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=2070&auto=format&fit=crop", title: "Nghệ Thuật Kể Chuyện Trong Marketing", author: "Khanh Nguyễn", duration: "55:00 min", category: "Storytelling" },
-  { imgSrc: "https://images.unsplash.com/photo-1558522195-e1a91193d04e?q=80&w=1974&auto=format&fit=crop", title: "Tối Ưu Hóa Social Media 2025", author: "KA Content Team", duration: "48:20 min", category: "Social Media" },
-  { imgSrc: "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?q=80&w=1887&auto=format&fit=crop", title: "Tư Duy Sáng Tạo", author: "Khanh Nguyễn", duration: "40:00 min", category: "Sáng tạo" },
-  { imgSrc: "https://images.unsplash.com/photo-1511377195490-52c1bcae3fe4?q=80&w=1887&auto=format&fit=crop", title: "Podcast Về Cuộc Sống", author: "Guest Speaker", duration: "30:00 min", category: "Lifestyle" },
+  { imgSrc: "https://images.unsplash.com/photo-1598214886806-2c88b8185447?q=80&w=1925&auto=format&fit=crop", title: "Xây Dựng Thương Hiệu Cá Nhân Bền Vững", author: "KA Content Team", duration: "35:15 min", category: "Branding" },
+  { imgSrc: "https://images.unsplash.com/photo-1612073464778-42d3b74f7e3c?q=80&w=2070&auto=format&fit=crop", title: "Giải Mã Sáng Tạo: Ý Tưởng Từ Đâu Đến?", author: "Khanh Nguyễn", duration: "45:30 min", category: "Sáng tạo" },
+  { imgSrc: "https://images.unsplash.com/photo-1558522195-e1a91193d04e?q=80&w=1974&auto=format&fit=crop", title: "Bí Mật Thuật Toán Social Media 2025", author: "KA Content Team", duration: "48:20 min", category: "Social Media" },
+  { imgSrc: "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?q=80&w=1887&auto=format&fit=crop", title: "Tư Duy Chiến Lược Cho Người Làm Content", author: "Khanh Nguyễn", duration: "40:00 min", category: "Strategy" },
+  { imgSrc: "https://images.unsplash.com/photo-1511377195490-52c1bcae3fe4?q=80&w=1887&auto=format&fit=crop", title: "Marketing Thực Chiến: Case Study Thành Công", author: "Guest Speaker", duration: "60:00 min", category: "Marketing" },
 ];
 
 const categories = ["Tất cả", ...new Set(allPodcasts.map(p => p.category).filter((c): c is string => !!c))];
@@ -66,30 +57,12 @@ export default function PodcastPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           {/* Main Content */}
-          <div className="lg:col-span-2 space-y-12">
-            {/* Trending this week */}
-            <section>
-              <h2 className="text-2xl font-bold mb-4">Nổi bật tuần này</h2>
-              <FeaturedPodcastCard podcast={trendingThisWeek} />
-            </section>
-
-            {/* Trending podcasts in... */}
-            <section>
-              <div className="flex justify-between items-center mb-4">
-                <h2 className="text-2xl font-bold">Podcast thịnh hành</h2>
-              </div>
-              <Carousel opts={{ align: "start" }} className="w-full">
-                <CarouselContent>
-                  {filteredPodcasts.map((podcast, index) => (
-                    <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                      <PodcastCard podcast={podcast} />
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious className="hidden sm:flex" />
-                <CarouselNext className="hidden sm:flex" />
-              </Carousel>
-            </section>
+          <div className="lg:col-span-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {filteredPodcasts.map((podcast, index) => (
+                <PodcastCard key={index} podcast={podcast} />
+              ))}
+            </div>
           </div>
 
           {/* Sidebar */}
