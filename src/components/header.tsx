@@ -22,7 +22,7 @@ export const Header = () => {
 
   const navLinks = [
     { href: "/courses", label: "Khóa Học" },
-    { href: "#", label: "Resource" },
+    { href: "/resource", label: "Resource" },
     { href: "/blog", label: "Blog" },
     { href: "/affiliate", label: "Affiliate" },
     { href: "/contact", label: "Liên Hệ" },
