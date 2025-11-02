@@ -14,6 +14,8 @@ export const Header = () => {
       setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener("scroll", handleScroll);
+    // Set initial state
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -28,7 +30,7 @@ export const Header = () => {
     <nav
       className={cn(
         "sticky top-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-primary shadow-lg" : "bg-transparent"
+        isScrolled ? "bg-primary shadow-lg" : "bg-transparent pt-4" // Add padding top when transparent
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,8 +38,20 @@ export const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center gap-2">
-              <img src="/logo.svg" alt="KaContent Logo" className="h-8 w-auto filter brightness-0 invert" />
-              <span className="text-xl font-bold text-primary-foreground">KA Content</span>
+              <img 
+                src="/logo.svg" 
+                alt="KaContent Logo" 
+                className={cn(
+                  "h-8 w-auto transition-all duration-300",
+                  isScrolled && "filter brightness-0 invert"
+                )}
+              />
+              <span className={cn(
+                "text-xl font-bold transition-colors duration-300",
+                isScrolled ? "text-primary-foreground" : "text-primary"
+              )}>
+                KA Content
+              </span>
             </Link>
           </div>
 
@@ -47,7 +61,10 @@ export const Header = () => {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-primary-foreground/80 hover:text-primary-foreground font-medium transition-colors"
+                className={cn(
+                  "font-medium transition-colors duration-300",
+                  isScrolled ? "text-primary-foreground/80 hover:text-primary-foreground" : "text-primary hover:text-primary/80"
+                )}
               >
                 {link.label}
               </Link>
@@ -56,10 +73,16 @@ export const Header = () => {
 
           {/* Icons - Desktop */}
           <div className="hidden md:flex items-center space-x-4">
-            <button className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+            <button className={cn(
+              "transition-colors duration-300",
+              isScrolled ? "text-primary-foreground/80 hover:text-primary-foreground" : "text-primary hover:text-primary/80"
+            )}>
               <Search className="w-6 h-6" />
             </button>
-            <button className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+            <button className={cn(
+              "transition-colors duration-300",
+              isScrolled ? "text-primary-foreground/80 hover:text-primary-foreground" : "text-primary hover:text-primary/80"
+            )}>
               <User className="w-6 h-6" />
             </button>
           </div>
@@ -69,7 +92,10 @@ export const Header = () => {
             <button
               id="mobile-menu-button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-primary-foreground"
+              className={cn(
+                "transition-colors duration-300",
+                isScrolled ? "text-primary-foreground" : "text-primary"
+              )}
             >
               <Menu className="w-6 h-6" />
             </button>
