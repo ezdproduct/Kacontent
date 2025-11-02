@@ -23,17 +23,17 @@ export const Features = () => {
   return (
     <section className="bg-background py-6 lg:py-10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-card p-8 rounded-2xl shadow-lg border border-border transition-transform duration-300 hover:scale-105 hover:shadow-xl flex flex-col justify-center aspect-square"
+              className="bg-card p-6 rounded-2xl shadow-lg border border-border transition-transform duration-300 hover:scale-105 hover:shadow-xl flex flex-col justify-center aspect-square"
             >
-              <h3 className="text-xl font-bold mb-2 text-foreground">{feature.title}</h3>
-              <p className="text-muted-foreground mb-4">{feature.description}</p>
+              <h3 className="text-lg font-bold mb-2 text-foreground">{feature.title}</h3>
+              <p className="text-muted-foreground text-sm mb-4">{feature.description}</p>
               <a
                 href={feature.link}
-                className="font-semibold text-primary hover:underline"
+                className="font-semibold text-primary hover:underline text-sm"
               >
                 Xem ngay &rarr;
               </a>
