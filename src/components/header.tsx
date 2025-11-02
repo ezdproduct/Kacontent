@@ -62,7 +62,7 @@ export const Header = () => {
                 key={link.label}
                 href={link.href}
                 className={cn(
-                  "font-medium transition-colors duration-300",
+                  "font-bold transition-colors duration-300",
                   isScrolled ? "text-primary-foreground/80 hover:text-primary-foreground" : "text-primary hover:text-primary/80"
                 )}
               >
@@ -113,7 +113,7 @@ export const Header = () => {
             <Link
               key={link.label}
               href={link.href}
-              className="text-muted-foreground hover:bg-muted block px-3 py-2 rounded-md font-medium"
+              className="text-muted-foreground hover:bg-muted block px-3 py-2 rounded-md font-bold"
             >
               {link.label}
             </Link>
