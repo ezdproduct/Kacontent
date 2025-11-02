@@ -27,7 +27,7 @@ export const Hero = () => {
             </div>
             <a
               href="#"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-primary/90 transition duration-300 group"
+              className="inline-flex items-center gap-2 border border-primary text-primary font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-primary hover:text-primary-foreground transition-colors duration-300 group"
             >
               Tích luỹ kiến thức
               <MoveRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
