@@ -27,9 +27,11 @@ export interface Resource {
 }
 
 export interface Podcast {
-  imgSrc: string;
+  imgSrc?: string;
   title: string;
   author: string;
   duration: string;
   category?: string;
+  episodeNumber?: string;
+  bgColor?: string;
 }
