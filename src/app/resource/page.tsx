@@ -6,7 +6,6 @@ import { Footer } from "@/components/footer";
 import { ResourceCard } from "@/components/resource-card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { FileText, Bot, Workflow } from "lucide-react";
 
 const allResources = [
@@ -54,30 +53,30 @@ const allResources = [
     },
 ];
 
-const categories = ["Tất cả", ...new Set(allResources.map((res) => res.category))];
+const ebooks = allResources.filter(res => res.type === 'Ebook');
+const templates = allResources.filter(res => res.type === 'Template');
+const templateCategories = ["Tất cả", ...new Set(templates.map((res) => res.category))];
 
 export default function ResourcePage() {
-  const [activeTab, setActiveTab] = useState("all");
+  const [activeTab, setActiveTab] = useState<'template' | 'ebook'>('template');
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("Tất cả");
-  const [filteredResources, setFilteredResources] = useState(allResources);
+  const [filteredResources, setFilteredResources] = useState(templates);
 
   useEffect(() => {
-    let resources = [...allResources];
-
-    // Filter by tab
-    if (activeTab !== "all") {
-      resources = resources.filter((res) => res.type.toLowerCase() === activeTab);
+    if (activeTab === 'ebook') {
+      setFilteredResources(ebooks);
+      return;
     }
 
-    // Filter by search term
+    let resources = [...templates];
+
     if (searchTerm) {
       resources = resources.filter((res) =>
         res.title.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
 
-    // Filter by category
     if (selectedCategory !== "Tất cả") {
       resources = resources.filter((res) => res.category === selectedCategory);
     }
@@ -100,49 +99,66 @@ export default function ResourcePage() {
               </p>
             </div>
 
-            {/* Tabs */}
-            <Tabs defaultValue="all" onValueChange={setActiveTab} className="w-full mb-8">
-              <TabsList className="grid w-full grid-cols-3 max-w-md mx-auto">
-                <TabsTrigger value="all">Tất cả</TabsTrigger>
-                <TabsTrigger value="Ebook">Kho Ebook</TabsTrigger>
-                <TabsTrigger value="Template">Kho Template</TabsTrigger>
-              </TabsList>
-            </Tabs>
-
-            {/* Filters */}
-            <div className="mb-8">
-              <Input
-                placeholder="Tìm kiếm tài nguyên..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="max-w-lg mx-auto"
-              />
-              <div className="flex flex-wrap justify-center gap-2 mt-4">
-                {categories.map((category) => (
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              {/* Vertical Tabs */}
+              <div className="md:col-span-1">
+                <div className="flex flex-row md:flex-col gap-2">
                   <Button
-                    key={category}
-                    variant={selectedCategory === category ? "default" : "outline"}
-                    onClick={() => setSelectedCategory(category)}
+                    variant={activeTab === 'template' ? 'default' : 'outline'}
+                    onClick={() => setActiveTab('template')}
+                    className="w-full justify-start"
                   >
-                    {category}
+                    Kho Template
                   </Button>
-                ))}
+                  <Button
+                    variant={activeTab === 'ebook' ? 'default' : 'outline'}
+                    onClick={() => setActiveTab('ebook')}
+                    className="w-full justify-start"
+                  >
+                    Kho Ebook
+                  </Button>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="md:col-span-3">
+                {/* Conditional Filters */}
+                {activeTab === 'template' && (
+                  <div className="mb-8">
+                    <Input
+                      placeholder="Tìm kiếm template..."
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                    <div className="flex flex-wrap gap-2 mt-4">
+                      {templateCategories.map((category) => (
+                        <Button
+                          key={category}
+                          variant={selectedCategory === category ? "default" : "outline"}
+                          onClick={() => setSelectedCategory(category)}
+                        >
+                          {category}
+                        </Button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Resources Grid */}
+                {filteredResources.length > 0 ? (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {filteredResources.map((resource, index) => (
+                      <ResourceCard key={index} resource={resource} />
+                    ))}
+                  </div>
+                ) : (
+                  <div className="text-center py-16">
+                    <h3 className="text-2xl font-bold">Không tìm thấy tài nguyên phù hợp</h3>
+                    <p className="text-muted-foreground mt-2">Vui lòng thử lại với từ khóa hoặc danh mục khác.</p>
+                  </div>
+                )}
               </div>
             </div>
-
-            {/* Resources Grid */}
-            {filteredResources.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredResources.map((resource, index) => (
-                  <ResourceCard key={index} resource={resource} />
-                ))}
-              </div>
-            ) : (
-              <div className="text-center py-16">
-                <h3 className="text-2xl font-bold">Không tìm thấy tài nguyên phù hợp</h3>
-                <p className="text-muted-foreground mt-2">Vui lòng thử lại với từ khóa hoặc danh mục khác.</p>
-              </div>
-            )}
           </div>
         </section>
       </main>
