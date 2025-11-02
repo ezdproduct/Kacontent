@@ -12,16 +12,16 @@
     --background: 0 0% 100%; /* #FFFFFF */
     --foreground: 0 0% 0%; /* #000000 - Black */
  
-    --primary: 231 100% 58%; /* #2949FF */
+    --primary: 228 100% 50%; /* #0033FF */
     --primary-foreground: 0 0% 100%; /* White */
  
     --secondary: 236 46% 36%; /* #333984 */
     --secondary-foreground: 0 0% 100%; /* White */
 
-    --muted: 231 100% 95%; /* Lighter version of primary */
+    --muted: 228 100% 95%; /* Lighter version of primary */
     --muted-foreground: 0 0% 40%; /* #666666 - Dark Grey */
  
-    --accent: 231 100% 95%; /* Lighter version of primary */
+    --accent: 228 100% 95%; /* Lighter version of primary */
     --accent-foreground: 0 0% 0%;
     
     --card: 0 0% 100%;
@@ -30,9 +30,9 @@
     --popover-foreground: 0 0% 0%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
-    --border: 231 100% 90%;
-    --input: 231 100% 90%;
-    --ring: 231 100% 58%;
+    --border: 228 100% 90%;
+    --input: 228 100% 90%;
+    --ring: 228 100% 50%;
  
     --radius: 0.5rem;
   }
@@ -41,16 +41,16 @@
     --background: 236 46% 15%; /* Darker version of secondary */
     --foreground: 0 0% 98%; /* Almost white */
  
-    --primary: 231 100% 58%;
+    --primary: 228 100% 50%;
     --primary-foreground: 0 0% 100%;
  
-    --secondary: 231 100% 58%;
+    --secondary: 228 100% 50%;
     --secondary-foreground: 0 0% 100%;
  
     --muted: 236 46% 20%;
     --muted-foreground: 0 0% 80%; /* Light Grey */
  
-    --accent: 231 100% 58%;
+    --accent: 228 100% 50%;
     --accent-foreground: 0 0% 100%;
  
     --card: 236 46% 15%;
@@ -59,8 +59,8 @@
     --popover-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
-    --border: 231 100% 58%;
-    --input: 231 100% 58%;
+    --border: 228 100% 50%;
+    --input: 228 100% 50%;
     --ring: 228 100% 98%;
   }
 }
@@ -76,7 +76,7 @@
 
 @layer utilities {
   .filter-to-primary {
-    filter: invert(24%) sepia(95%) saturate(2375%) hue-rotate(221deg) brightness(102%) contrast(106%);
+    filter: invert(18%) sepia(99%) saturate(7497%) hue-rotate(227deg) brightness(102%) contrast(106%);
   }
   .logo-mask {
     -webkit-mask-image: url(/logo.svg);
