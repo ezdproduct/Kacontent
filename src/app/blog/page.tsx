@@ -98,7 +98,7 @@ export default function BlogPage() {
             </div>
 
             <div className="text-center mt-16">
-                <Button variant="outline" size="lg">Loading more...</Button>
+                <Button variant="outline" size="lg">Tải thêm...</Button>
             </div>
 
           </div>
