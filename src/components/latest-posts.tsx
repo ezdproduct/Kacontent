@@ -5,7 +5,7 @@ import { BlogPostCard } from "./blog-post-card";
 export const LatestPosts = () => {
   const posts = [
     {
-      imgSrc: "https://placehold.co/600x400/e2e8f0/333?text=Bài+viết+1",
+      imgSrc: "https://images.unsplash.com/photo-1557682250-33bd709cbe85?q=80&w=2070&auto=format&fit=crop",
       category: "Daily Life Notes",
       author: "Khanh Nguyễn",
       title: "ĐIỂM THI ĐẠI HỌC CHỈ LÀ KHỞI ĐẦU",
@@ -13,7 +13,7 @@ export const LatestPosts = () => {
         "Gửi các bạn 2k7, Hôm nay là ngày các bạn nhận được điểm thi, nhiều người sẽ vui mừng vì điểm như mong đợi, nhiều...",
     },
     {
-      imgSrc: "https://placehold.co/600x400/e2e8f0/333?text=Bài+viết+2",
+      imgSrc: "https://images.unsplash.com/photo-1536702152972-d209d3321934?q=80&w=2070&auto=format&fit=crop",
       category: "Daily Life Notes",
       author: "Khanh Nguyễn",
       title: "CHÚNG TA KHÔNG THỂ GIỎI TẤT CẢ MỌI THỨ",
@@ -21,7 +21,7 @@ export const LatestPosts = () => {
         "Chúng ta không thể giỏi tất cả mọi thứ, đó là điều bình thường. Có một sự thật mà không mấy ai muốn thừa nhận.",
     },
     {
-      imgSrc: "https://placehold.co/600x400/e2e8f0/333?text=Bài+viết+3",
+      imgSrc: "https://images.unsplash.com/photo-1599237933330-768471523693?q=80&w=1932&auto=format&fit=crop",
       category: "Ecommerce",
       author: "Khanh Nguyễn",
       title: "CHIẾN LƯỢC - TẦM NHÌN VÀ KHẢ NĂNG THỰC THI",

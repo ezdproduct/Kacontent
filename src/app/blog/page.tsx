@@ -4,42 +4,42 @@ import { BlogPostCard } from "@/components/blog-post-card";
 
 const posts = [
     {
-      imgSrc: "https://placehold.co/600x400/e2e8f0/333?text=Bài+viết+1",
+      imgSrc: "https://images.unsplash.com/photo-1557682250-33bd709cbe85?q=80&w=2070&auto=format&fit=crop",
       category: "Daily Life Notes",
       author: "Khanh Nguyễn",
       title: "ĐIỂM THI ĐẠI HỌC CHỈ LÀ KHỞI ĐẦU",
       excerpt: "Gửi các bạn 2k7, Hôm nay là ngày các bạn nhận được điểm thi, nhiều người sẽ vui mừng vì điểm như mong đợi, nhiều...",
     },
     {
-      imgSrc: "https://placehold.co/600x400/e2e8f0/333?text=Bài+viết+2",
+      imgSrc: "https://images.unsplash.com/photo-1536702152972-d209d3321934?q=80&w=2070&auto=format&fit=crop",
       category: "Daily Life Notes",
       author: "Khanh Nguyễn",
       title: "CHÚNG TA KHÔNG THỂ GIỎI TẤT CẢ MỌI THỨ",
       excerpt: "Chúng ta không thể giỏi tất cả mọi thứ, đó là điều bình thường. Có một sự thật mà không mấy ai muốn thừa nhận.",
     },
     {
-      imgSrc: "https://placehold.co/600x400/e2e8f0/333?text=Bài+viết+3",
+      imgSrc: "https://images.unsplash.com/photo-1599237933330-768471523693?q=80&w=1932&auto=format&fit=crop",
       category: "Ecommerce",
       author: "Khanh Nguyễn",
       title: "CHIẾN LƯỢC - TẦM NHÌN VÀ KHẢ NĂNG THỰC THI",
       excerpt: "Chiến lược – tầm nhìn chỉ là con số 0, Nếu đội ngũ không có khả năng thực thi. Nếu gọi chiến lược là tấm...",
     },
     {
-      imgSrc: "https://placehold.co/600x400/e2e8f0/333?text=Bài+viết+4",
+      imgSrc: "https://images.unsplash.com/photo-1528552348314-626b5b20514d?q=80&w=2070&auto=format&fit=crop",
       category: "Marketing",
       author: "Khanh Nguyễn",
       title: "XÂY DỰNG THƯƠNG HIỆU CÁ NHÂN TRÊN MẠNG XÃ HỘI",
       excerpt: "Thương hiệu cá nhân không phải là thứ bạn tạo ra sau một đêm. Đó là cả một quá trình xây dựng uy tín và sự tin tưởng.",
     },
     {
-      imgSrc: "https://placehold.co/600x400/e2e8f0/333?text=Bài+viết+5",
+      imgSrc: "https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?q=80&w=1887&auto=format&fit=crop",
       category: "Tư duy",
       author: "Khanh Nguyễn",
       title: "VƯỢT QUA SỰ TRÌ HOÃN: 5 BƯỚC ĐƠN GIẢN",
       excerpt: "Sự trì hoãn là kẻ thù của thành công. Hãy cùng tìm hiểu cách để chiến thắng nó và bắt đầu hành động ngay hôm nay.",
     },
     {
-      imgSrc: "https://placehold.co/600x400/e2e8f0/333?text=Bài+viết+6",
+      imgSrc: "https://images.unsplash.com/photo-1511377195490-52c1bcae3fe4?q=80&w=1887&auto=format&fit=crop",
       category: "Sáng tạo",
       author: "Khanh Nguyễn",
       title: "LÀM THẾ NÀO ĐỂ LUÔN CÓ Ý TƯỞNG SÁNG TẠO?",
