@@ -9,7 +9,7 @@
 
   :root {
     /* Colors from new UI Kit */
-    --background: 228 100% 98%; /* #F4F6FF */
+    --background: 0 0% 100%; /* #FFFFFF */
     --foreground: 0 0% 0%; /* #000000 - Black */
  
     --primary: 231 100% 58%; /* #2949FF */
