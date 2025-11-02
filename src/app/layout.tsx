@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
+import { FloatingChatButton } from "@/components/floating-chat-button";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -32,6 +33,7 @@ export default function RootLayout({
           speed={200}
         />
         {children}
+        <FloatingChatButton />
       </body>
     </html>
   );
