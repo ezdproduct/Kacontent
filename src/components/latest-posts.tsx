@@ -24,13 +24,13 @@ export const LatestPosts = () => {
   ];
 
   return (
-    <section className="bg-gray-50 py-16 lg:py-24">
+    <section className="bg-muted py-16 lg:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900">
+          <h2 className="text-3xl lg:text-4xl font-extrabold text-foreground">
             Nội Dung Mới Nhất
           </h2>
-          <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
             Nơi mình chia sẻ những bài đăng mới nhất về các chủ đề xoay quanh
             content.
           </p>
@@ -40,7 +40,7 @@ export const LatestPosts = () => {
           {posts.map((post, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col"
+              className="bg-card rounded-lg shadow-lg overflow-hidden flex flex-col"
             >
               <Link href="#">
                 <img
@@ -50,12 +50,12 @@ export const LatestPosts = () => {
                 />
               </Link>
               <div className="p-6 flex-grow">
-                <h3 className="text-xl font-bold mb-3">
-                  <Link href="#" className="hover:text-blue-600">
+                <h3 className="text-xl font-bold mb-3 text-foreground">
+                  <Link href="#" className="hover:text-primary">
                     {post.title}
                   </Link>
                 </h3>
-                <p className="text-gray-600 text-sm line-clamp-3">
+                <p className="text-muted-foreground text-sm line-clamp-3">
                   {post.excerpt}
                 </p>
               </div>

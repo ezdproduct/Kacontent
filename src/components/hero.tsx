@@ -7,13 +7,13 @@ export const Hero = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Cột văn bản */}
         <div>
-          <span className="text-sm font-semibold text-blue-600 uppercase">
+          <span className="text-sm font-semibold text-primary uppercase">
             KHANH LÀ NGUYỄN THUỲ KHANH
           </span>
-          <h1 className="text-4xl lg:text-5xl font-extrabold text-gray-900 mt-3 mb-6">
+          <h1 className="text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-6">
             Giúp Creator xây dựng content đa nền tảng
           </h1>
-          <div className="space-y-4 text-lg text-gray-600 mb-8">
+          <div className="space-y-4 text-lg text-muted-foreground mb-8">
             <p>
               Mình đồng hành cùng creator, marketer và doanh nghiệp trong hành trình kiến tạo chiến lược nội dung có chiều sâu – lan tỏa – và tạo kết quả thực.
             </p>
@@ -26,7 +26,7 @@ export const Hero = () => {
           </div>
           <a
             href="#"
-            className="inline-block bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
+            className="inline-block bg-primary text-primary-foreground font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-primary/90 transition duration-300"
           >
             Tích luỹ kiến thức
           </a>

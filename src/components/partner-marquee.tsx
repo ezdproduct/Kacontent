@@ -34,8 +34,8 @@ const MarqueeContent = () => (
 
 export const PartnerMarquee = () => {
   return (
-    <div className="mt-12 overflow-hidden py-8 border-y border-blue-700 bg-blue-900 group">
-      <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-6 text-center">
+    <div className="mt-12 overflow-hidden py-8 border-y border-border bg-foreground group">
+      <h3 className="text-sm font-semibold text-background uppercase tracking-wider mb-6 text-center">
         Với sự đồng hành của các đối tác hàng đầu
       </h3>
       <div className="flex whitespace-nowrap">

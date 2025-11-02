@@ -15,14 +15,14 @@ export const Header = () => {
   ];
 
   return (
-    <nav className="bg-white shadow-sm sticky top-0 z-50">
+    <nav className="bg-card shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="text-2xl font-bold">
-              <span className="text-gray-900">Ka</span>
-              <span className="text-blue-600">Content</span>
+              <span className="text-foreground">Ka</span>
+              <span className="text-primary">Content</span>
             </Link>
           </div>
 
@@ -32,7 +32,7 @@ export const Header = () => {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-gray-600 hover:text-blue-600 font-medium"
+                className="text-muted-foreground hover:text-primary font-medium"
               >
                 {link.label}
               </Link>
@@ -41,10 +41,10 @@ export const Header = () => {
 
           {/* Icons - Desktop */}
           <div className="hidden md:flex items-center space-x-4">
-            <button className="text-gray-500 hover:text-blue-600">
+            <button className="text-muted-foreground hover:text-primary">
               <Search className="w-6 h-6" />
             </button>
-            <button className="text-gray-500 hover:text-blue-600">
+            <button className="text-muted-foreground hover:text-primary">
               <User className="w-6 h-6" />
             </button>
           </div>
@@ -54,7 +54,7 @@ export const Header = () => {
             <button
               id="mobile-menu-button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-500 hover:text-blue-600"
+              className="text-muted-foreground hover:text-primary"
             >
               <Menu className="w-6 h-6" />
             </button>
@@ -72,7 +72,7 @@ export const Header = () => {
             <Link
               key={link.label}
               href={link.href}
-              className="text-gray-600 hover:bg-gray-100 block px-3 py-2 rounded-md font-medium"
+              className="text-muted-foreground hover:bg-muted block px-3 py-2 rounded-md font-medium"
             >
               {link.label}
             </Link>

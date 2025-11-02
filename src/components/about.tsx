@@ -15,10 +15,10 @@ export const About = () => {
 
         {/* Cột văn bản */}
         <div className="md:order-first">
-          <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6">
+          <h2 className="text-3xl lg:text-4xl font-extrabold text-foreground mb-6">
             Về Nguyễn Thùy Khanh
           </h2>
-          <div className="space-y-4 text-lg text-gray-600">
+          <div className="space-y-4 text-lg text-muted-foreground">
             <p>
               Mình là Nguyễn Thùy Khanh — người sáng lập KA Content.
             </p>
@@ -31,7 +31,7 @@ export const About = () => {
           </div>
           <a
             href="#"
-            className="mt-8 inline-block bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
+            className="mt-8 inline-block bg-primary text-primary-foreground font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-primary/90 transition duration-300"
           >
             Xem chi tiết câu chuyện
           </a>
