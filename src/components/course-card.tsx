@@ -5,7 +5,8 @@ interface Course {
   imgSrc: string;
   title: string;
   description: string;
-  price: string;
+  price: number;
+  category: string;
 }
 
 interface CourseCardProps {
@@ -13,6 +14,11 @@ interface CourseCardProps {
 }
 
 export const CourseCard = ({ course }: CourseCardProps) => {
+  const formattedPrice = new Intl.NumberFormat("vi-VN", {
+    style: "currency",
+    currency: "VND",
+  }).format(course.price);
+
   return (
     <div className="bg-card rounded-2xl shadow-lg overflow-hidden flex flex-col group">
       <Link href="#" className="block overflow-hidden">
@@ -32,7 +38,7 @@ export const CourseCard = ({ course }: CourseCardProps) => {
           {course.description}
         </p>
         <div className="flex justify-between items-center mt-auto">
-          <p className="text-xl font-extrabold text-primary">{course.price}</p>
+          <p className="text-xl font-extrabold text-primary">{formattedPrice}</p>
           <Button>Đăng ký ngay</Button>
         </div>
       </div>
