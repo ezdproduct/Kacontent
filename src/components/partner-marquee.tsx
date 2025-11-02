@@ -41,14 +41,14 @@ const MarqueeContent = () => (
 
 export const PartnerMarquee = () => {
   return (
-    <section className="py-12 bg-background overflow-hidden group">
+    <section className="bg-background overflow-hidden py-8">
       <div className="text-center mb-8">
-        <p className="text-lg font-semibold text-muted-foreground">
+        <p className="text-lg font-bold text-muted-foreground">
           Được tin tưởng bởi các thương hiệu hàng đầu
         </p>
       </div>
       <div className="flex whitespace-nowrap">
-        <div className="flex space-x-16 animate-marquee items-center group-hover:[animation-play-state:paused]">
+        <div className="flex space-x-16 animate-marquee items-center">
           <MarqueeContent />
           <MarqueeContent />
         </div>

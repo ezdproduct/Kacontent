@@ -75,9 +75,12 @@
 }
 
 @layer utilities {
+  .filter-to-primary {
+    filter: invert(24%) sepia(95%) saturate(2375%) hue-rotate(221deg) brightness(102%) contrast(106%);
+  }
   .logo-mask {
-    -webkit-mask-image: url(/logo.svg);
-    mask-image: url(/logo.svg);
+    -webkit-mask-image: var(--mask-url);
+    mask-image: var(--mask-url);
     -webkit-mask-size: contain;
     mask-size: contain;
     -webkit-mask-repeat: no-repeat;
@@ -85,4 +88,17 @@
     -webkit-mask-position: center;
     mask-position: center;
   }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 120s linear infinite;
 }
