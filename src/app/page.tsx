@@ -4,6 +4,7 @@ import { Features } from "@/components/features";
 import { About } from "@/components/about";
 import { LatestPosts } from "@/components/latest-posts";
 import { Footer } from "@/components/footer";
+import { Partners } from "@/components/partners";
 import { Achievements } from "@/components/achievements";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
         <Hero />
         <Features />
         <About />
+        <Partners />
         <Achievements />
         <LatestPosts />
       </main>
