@@ -1,40 +1,11 @@
 import Link from "next/link";
 import { MoveRight } from "lucide-react";
 import { BlogPostCard } from "./blog-post-card";
+import { getAllPosts } from "@/lib/posts";
 
-export const LatestPosts = () => {
-  const posts = [
-    {
-      imgSrc: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop",
-      category: "Content Strategy",
-      author: "Khanh Nguyễn",
-      title: "Bí Quyết Xây Dựng Kênh TikTok Triệu View Từ Con Số 0",
-      excerpt:
-        "Khám phá lộ trình chi tiết, từ việc xác định đối tượng, sáng tạo nội dung viral, đến cách tận dụng thuật toán của TikTok.",
-      authorAvatar: "/images/nguyen-thuy-khanh-portrait.jpg",
-      date: "25 Oct 2024",
-    },
-    {
-      imgSrc: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=2070&auto=format&fit=crop",
-      category: "Copywriting",
-      author: "Khanh Nguyễn",
-      title: "Nghệ Thuật Viết Content 'Chạm' Đến Cảm Xúc Khách Hàng",
-      excerpt:
-        "Học cách sử dụng ngôn từ để kể chuyện, tạo sự kết nối và thúc đẩy hành động mua hàng một cách tự nhiên và hiệu quả.",
-      authorAvatar: "/images/nguyen-thuy-khanh-portrait.jpg",
-      date: "22 Oct 2024",
-    },
-    {
-      imgSrc: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop",
-      category: "Personal Branding",
-      author: "Khanh Nguyễn",
-      title: "Xây Dựng Thương Hiệu Cá Nhân: Từ Zero đến Hero",
-      excerpt:
-        "Thương hiệu cá nhân không chỉ là về sự nổi tiếng. Đó là cách bạn xây dựng uy tín và tạo ra giá trị bền vững cho sự nghiệp.",
-      authorAvatar: "/images/nguyen-thuy-khanh-portrait.jpg",
-      date: "20 Oct 2024",
-    },
-  ];
+export const LatestPosts = async () => {
+  const allPosts = await getAllPosts();
+  const posts = allPosts.filter(p => !p.featured).slice(0, 3);
 
   return (
     <section className="bg-muted py-12 lg:py-20">
@@ -49,8 +20,8 @@ export const LatestPosts = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {posts.map((post, index) => (
-            <BlogPostCard key={index} post={post} />
+          {posts.map((post) => (
+            <BlogPostCard key={post.id} post={post} />
           ))}
         </div>
 

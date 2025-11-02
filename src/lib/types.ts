@@ -1,8 +1,11 @@
 export interface Post {
+  id: number | string;
+  slug: string;
   imgSrc?: string;
   category: string;
   title: string;
   excerpt: string;
+  content?: string;
   author: string;
   authorAvatar: string;
   date: string;
