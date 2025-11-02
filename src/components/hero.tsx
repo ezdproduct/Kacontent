@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { MoveRight } from "lucide-react";
 
 export const Hero = () => {
   return (
@@ -26,9 +27,10 @@ export const Hero = () => {
             </div>
             <a
               href="#"
-              className="inline-block bg-primary text-primary-foreground font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-primary/90 transition duration-300"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-primary/90 transition duration-300 group"
             >
               Tích luỹ kiến thức
+              <MoveRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </a>
           </div>
 

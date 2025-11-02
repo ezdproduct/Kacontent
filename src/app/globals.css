@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
   :root {
     /* Colors from new UI Kit */
     --background: 228 100% 98%; /* #F4F6FF */

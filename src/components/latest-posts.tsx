@@ -41,13 +41,13 @@ export const LatestPosts = () => {
             {posts.map((post, index) => (
               <div
                 key={index}
-                className="bg-card rounded-2xl shadow-lg overflow-hidden flex flex-col transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+                className="bg-card rounded-2xl shadow-lg overflow-hidden flex flex-col group"
               >
-                <Link href="#">
+                <Link href="#" className="overflow-hidden">
                   <img
                     src={post.imgSrc}
                     alt="Ảnh bìa bài viết"
-                    className="w-full aspect-square object-cover"
+                    className="w-full aspect-square object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </Link>
                 <div className="p-6 flex-grow">

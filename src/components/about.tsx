@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { MoveRight } from "lucide-react";
 
 export const About = () => {
   return (
@@ -8,9 +9,9 @@ export const About = () => {
           {/* Cột hình ảnh */}
           <div className="flex justify-center">
             <img
-              src="https://placehold.co/500x650/e2e8f0/333?text=Ảnh+toàn+thân"
-              alt="Ảnh toàn thân Nguyễn Thùy Khanh"
-              className="rounded-lg shadow-xl w-full max-w-md object-cover"
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop"
+              alt="Một người đang làm việc trên laptop"
+              className="rounded-lg shadow-xl w-full max-w-md object-cover aspect-[4/5]"
             />
           </div>
 
@@ -32,9 +33,10 @@ export const About = () => {
             </div>
             <a
               href="#"
-              className="mt-8 inline-block bg-primary text-primary-foreground font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-primary/90 transition duration-300"
+              className="inline-flex items-center gap-2 mt-8 bg-primary text-primary-foreground font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-primary/90 transition duration-300 group"
             >
               Xem chi tiết câu chuyện
+              <MoveRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </a>
           </div>
         </div>
