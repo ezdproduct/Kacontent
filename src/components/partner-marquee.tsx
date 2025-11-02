@@ -21,22 +21,29 @@ const partnerLogos = [
 const MarqueeContent = () => (
   <>
     {partnerLogos.map((logo, index) => (
-      <div key={index} className="flex-shrink-0 w-48 h-20 relative">
-        <img
-          src={logo.src}
-          alt={logo.alt}
-          className="object-contain w-full h-full filter brightness-0 invert"
-        />
-      </div>
+      <div
+        key={index}
+        className="h-10 w-32 bg-muted-foreground/50 hover:bg-primary transition-all duration-300"
+        style={{
+          maskImage: `url(${logo.src})`,
+          maskSize: 'contain',
+          maskRepeat: 'no-repeat',
+          maskPosition: 'center',
+          WebkitMaskImage: `url(${logo.src})`,
+          WebkitMaskSize: 'contain',
+          WebkitMaskRepeat: 'no-repeat',
+          WebkitMaskPosition: 'center',
+        }}
+      />
     ))}
   </>
 );
 
 export const PartnerMarquee = () => {
   return (
-    <section className="py-12 bg-primary overflow-hidden group">
+    <section className="py-12 bg-background overflow-hidden group">
       <div className="text-center mb-8">
-        <p className="text-lg font-semibold text-primary-foreground/80">
+        <p className="text-lg font-semibold text-muted-foreground">
           Được tin tưởng bởi các thương hiệu hàng đầu
         </p>
       </div>
