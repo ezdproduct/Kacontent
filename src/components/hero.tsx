@@ -13,11 +13,17 @@ export const Hero = () => {
           <h1 className="text-4xl lg:text-5xl font-extrabold text-gray-900 mt-3 mb-6">
             Giúp Creator xây dựng content đa nền tảng
           </h1>
-          <p className="text-lg text-gray-600 mb-8">
-            Blog này là nơi mình chia sẻ về Content, tư duy và các câu chuyện
-            làm nghề. Mong rằng những kiến thức, trải nghiệm được đúc kết này
-            sẽ là nguồn tham khảo hữu ích và tiết kiệm thời gian cho bạn.
-          </p>
+          <div className="space-y-4 text-lg text-gray-600 mb-8">
+            <p>
+              Mình đồng hành cùng creator, marketer và doanh nghiệp trong hành trình kiến tạo chiến lược nội dung có chiều sâu – lan tỏa – và tạo kết quả thực.
+            </p>
+            <p>
+              Blog này là nơi mình chia sẻ về nghề làm nội dung, tư duy sáng tạo và những trải nghiệm thật sau hơn hai thập kỷ gắn bó với truyền thông.
+            </p>
+            <p>
+              Hy vọng những điều mình viết ra sẽ giúp bạn hiểu hơn về content, đi nhanh hơn với nghề, và giữ được cảm hứng trên con đường làm sáng tạo.
+            </p>
+          </div>
           <a
             href="#"
             className="inline-block bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
