@@ -7,7 +7,7 @@ export const Hero = () => {
         {/* Cột văn bản */}
         <div>
           <span className="text-sm font-semibold text-blue-600 uppercase">
-            NHÃN LÀ NHÂN NGUYỄN
+            KHANH LÀ NGUYỄN THUỲ KHANH
           </span>
           <h1 className="text-4xl lg:text-5xl font-extrabold text-gray-900 mt-3 mb-6">
             Giúp Creator xây dựng content đa nền tảng
@@ -48,7 +48,7 @@ export const Hero = () => {
         <div className="flex justify-center">
           <img
             src="https://placehold.co/500x600/e2e8f0/333?text=Chân+dung"
-            alt="Chân dung Nhân Nguyễn"
+            alt="Chân dung Nguyễn Thuỳ Khanh"
             className="rounded-lg shadow-xl w-full max-w-md object-cover"
           />
         </div>
