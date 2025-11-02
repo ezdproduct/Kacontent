@@ -1,6 +1,7 @@
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { BlogPostCard, Post } from "@/components/blog-post-card";
+import { BlogPostCard } from "@/components/blog-post-card";
+import { Post } from "@/lib/types";
 import { FeaturedPost } from "@/components/featured-post";
 import { Button } from "@/components/ui/button";
 import { PageHeader } from "@/components/page-header";

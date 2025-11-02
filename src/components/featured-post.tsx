@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { Post } from "./blog-post-card";
+import { Post } from "@/lib/types";
 
 const DEFAULT_IMAGE_URL = "https://images.unsplash.com/photo-1557682250-33bd709cbe85?q=80&w=2070&auto=format&fit=crop";
 

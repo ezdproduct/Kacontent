@@ -1,14 +1,7 @@
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-
-interface Course {
-  imgSrc: string;
-  title: string;
-  description: string;
-  price: number;
-  category: string;
-}
+import { Course } from "@/lib/types";
 
 interface CourseCardProps {
   course: Course;

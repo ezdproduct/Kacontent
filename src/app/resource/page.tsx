@@ -3,11 +3,15 @@
 import { useState, useEffect } from "react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { ResourceCard, Resource } from "@/components/resource-card";
+import { ResourceCard } from "@/components/resource-card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { PageHeader } from "@/components/page-header";
 import { Separator } from "@/components/ui/separator";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Filter } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
+import { Resource } from "@/lib/types";
 
 const allResources: Resource[] = [
     { type: 'Template', imgSrc: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop", title: "Mẫu Bài Viết Blog Chuẩn SEO", category: "Content" },
@@ -21,15 +25,51 @@ const allResources: Resource[] = [
 const allCategories = ["Tất cả", ...new Set(allResources.map((res) => res.category))];
 const resourceTypes = ["Tất cả", "Template", "Ebook"];
 
+interface FiltersProps {
+  searchTerm: string;
+  setSearchTerm: (value: string) => void;
+  selectedType: string;
+  setSelectedType: (value: string) => void;
+  selectedCategory: string;
+  setSelectedCategory: (value: string) => void;
+}
+
+const Filters = ({ searchTerm, setSearchTerm, selectedType, setSelectedType, selectedCategory, setSelectedCategory }: FiltersProps) => (
+  <div className="space-y-6">
+    <div>
+      <h3 className="font-bold mb-2">Tìm kiếm</h3>
+      <Input placeholder="Tìm theo tên..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+    </div>
+    <Separator />
+    <div>
+      <h3 className="font-bold mb-2">Loại tài nguyên</h3>
+      <div className="flex flex-col gap-2">
+        {resourceTypes.map((type) => (
+          <Button key={type} variant={selectedType === type ? "default" : "ghost"} onClick={() => setSelectedType(type)} className="justify-start">{type}</Button>
+        ))}
+      </div>
+    </div>
+    <Separator />
+    <div>
+      <h3 className="font-bold mb-2">Danh mục</h3>
+      <div className="flex flex-wrap gap-2">
+        {allCategories.map((category) => (
+          <Button key={category} size="sm" variant={selectedCategory === category ? "default" : "outline"} onClick={() => setSelectedCategory(category)} className="rounded-full">{category}</Button>
+        ))}
+      </div>
+    </div>
+  </div>
+);
+
 export default function ResourcePage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedType, setSelectedType] = useState("Tất cả");
   const [selectedCategory, setSelectedCategory] = useState("Tất cả");
   const [filteredResources, setFilteredResources] = useState(allResources);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     let resources = [...allResources];
-
     if (selectedType !== "Tất cả") {
       resources = resources.filter((res) => res.type === selectedType);
     }
@@ -42,6 +82,8 @@ export default function ResourcePage() {
     setFilteredResources(resources);
   }, [searchTerm, selectedType, selectedCategory]);
 
+  const filterProps = { searchTerm, setSearchTerm, selectedType, setSelectedType, selectedCategory, setSelectedCategory };
+
   return (
     <div className="bg-background text-foreground">
       <Header />
@@ -53,37 +95,25 @@ export default function ResourcePage() {
               subtitle="Tải xuống các mẫu content, kịch bản automation, và prompt AI được thiết kế để giúp bạn tăng tốc quy trình làm việc và nâng cao chất lượng nội dung."
             />
             
+            {isMobile && (
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="outline" className="w-full mb-8"><Filter className="w-4 h-4 mr-2" />Lọc & Sắp xếp</Button>
+                </SheetTrigger>
+                <SheetContent>
+                  <SheetHeader><SheetTitle>Lọc & Sắp xếp</SheetTitle></SheetHeader>
+                  <div className="py-8"><Filters {...filterProps} /></div>
+                </SheetContent>
+              </Sheet>
+            )}
+            
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              {/* Sidebar */}
-              <aside className="md:col-span-1 md:sticky md:top-24 h-fit">
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="font-bold mb-2">Tìm kiếm</h3>
-                    <Input placeholder="Tìm theo tên..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
-                  </div>
-                  <Separator />
-                  <div>
-                    <h3 className="font-bold mb-2">Loại tài nguyên</h3>
-                    <div className="flex flex-col gap-2">
-                      {resourceTypes.map((type) => (
-                        <Button key={type} variant={selectedType === type ? "default" : "ghost"} onClick={() => setSelectedType(type)} className="justify-start">{type}</Button>
-                      ))}
-                    </div>
-                  </div>
-                  <Separator />
-                  <div>
-                    <h3 className="font-bold mb-2">Danh mục</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {allCategories.map((category) => (
-                        <Button key={category} size="sm" variant={selectedCategory === category ? "default" : "outline"} onClick={() => setSelectedCategory(category)} className="rounded-full">{category}</Button>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </aside>
-
-              {/* Content */}
-              <div className="md:col-span-3">
+              {!isMobile && (
+                <aside className="md:col-span-1 md:sticky md:top-24 h-fit">
+                  <Filters {...filterProps} />
+                </aside>
+              )}
+              <div className={isMobile ? "col-span-1" : "md:col-span-3"}>
                 {filteredResources.length > 0 ? (
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {filteredResources.map((resource, index) => (

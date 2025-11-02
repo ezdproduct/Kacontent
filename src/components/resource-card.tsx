@@ -16,15 +16,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-
-export interface Resource {
-  type: 'Template' | 'Ebook';
-  title: string;
-  description?: string;
-  category: string;
-  imgSrc: string;
-  author?: string;
-}
+import { Resource } from "@/lib/types";
 
 interface ResourceCardProps {
   resource: Resource;
@@ -37,8 +29,6 @@ export const ResourceCard = ({ resource }: ResourceCardProps) => {
     e.preventDefault();
     console.log(`Gửi tài liệu "${resource.title}" đến Zalo số: ${phone}`);
     alert("Yêu cầu đã được gửi! Vui lòng kiểm tra Zalo của bạn trong vài phút tới.");
-    // Here you would typically close the dialog, which happens automatically
-    // if the DialogTrigger is not inside the form.
   };
 
   return (

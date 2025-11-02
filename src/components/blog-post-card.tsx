@@ -1,18 +1,8 @@
 import Link from "next/link";
 import { AuthorInfo } from "./author-info";
+import { Post } from "@/lib/types";
 
 const DEFAULT_IMAGE_URL = "https://images.unsplash.com/photo-1557682250-33bd709cbe85?q=80&w=2070&auto=format&fit=crop";
-
-export interface Post {
-  imgSrc?: string;
-  category: string;
-  title: string;
-  excerpt: string;
-  author: string;
-  authorAvatar: string;
-  date: string;
-  featured?: boolean;
-}
 
 interface BlogPostCardProps {
   post: Post;
