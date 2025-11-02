@@ -5,34 +5,34 @@ import { BlogPostCard } from "./blog-post-card";
 export const LatestPosts = () => {
   const posts = [
     {
-      imgSrc: "https://images.unsplash.com/photo-1557682250-33bd709cbe85?q=80&w=2070&auto=format&fit=crop",
-      category: "Daily Life Notes",
+      imgSrc: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop",
+      category: "Content Strategy",
       author: "Khanh Nguyễn",
-      title: "ĐIỂM THI ĐẠI HỌC CHỈ LÀ KHỞI ĐẦU",
+      title: "Bí Quyết Xây Dựng Kênh TikTok Triệu View Từ Con Số 0",
       excerpt:
-        "Gửi các bạn 2k7, Hôm nay là ngày các bạn nhận được điểm thi, nhiều người sẽ vui mừng vì điểm như mong đợi, nhiều...",
+        "Khám phá lộ trình chi tiết, từ việc xác định đối tượng, sáng tạo nội dung viral, đến cách tận dụng thuật toán của TikTok.",
       authorAvatar: "/images/nguyen-thuy-khanh-portrait.jpg",
-      date: "22 Jan 2024",
+      date: "25 Oct 2024",
     },
     {
-      imgSrc: "https://images.unsplash.com/photo-1536702152972-d209d3321934?q=80&w=2070&auto=format&fit=crop",
-      category: "Daily Life Notes",
+      imgSrc: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=2070&auto=format&fit=crop",
+      category: "Copywriting",
       author: "Khanh Nguyễn",
-      title: "CHÚNG TA KHÔNG THỂ GIỎI TẤT CẢ MỌI THỨ",
+      title: "Nghệ Thuật Viết Content 'Chạm' Đến Cảm Xúc Khách Hàng",
       excerpt:
-        "Chúng ta không thể giỏi tất cả mọi thứ, đó là điều bình thường. Có một sự thật mà không mấy ai muốn thừa nhận.",
+        "Học cách sử dụng ngôn từ để kể chuyện, tạo sự kết nối và thúc đẩy hành động mua hàng một cách tự nhiên và hiệu quả.",
       authorAvatar: "/images/nguyen-thuy-khanh-portrait.jpg",
-      date: "21 Jan 2024",
+      date: "22 Oct 2024",
     },
     {
-      imgSrc: "https://images.unsplash.com/photo-1599237933330-768471523693?q=80&w=1932&auto=format&fit=crop",
-      category: "Ecommerce",
+      imgSrc: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop",
+      category: "Personal Branding",
       author: "Khanh Nguyễn",
-      title: "CHIẾN LƯỢC - TẦM NHÌN VÀ KHẢ NĂNG THỰC THI",
+      title: "Xây Dựng Thương Hiệu Cá Nhân: Từ Zero đến Hero",
       excerpt:
-        "Chiến lược – tầm nhìn chỉ là con số 0, Nếu đội ngũ không có khả năng thực thi. Nếu gọi chiến lược là tấm...",
+        "Thương hiệu cá nhân không chỉ là về sự nổi tiếng. Đó là cách bạn xây dựng uy tín và tạo ra giá trị bền vững cho sự nghiệp.",
       authorAvatar: "/images/nguyen-thuy-khanh-portrait.jpg",
-      date: "20 Jan 2024",
+      date: "20 Oct 2024",
     },
   ];
 
