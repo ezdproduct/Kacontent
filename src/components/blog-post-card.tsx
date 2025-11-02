@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { AuthorInfo } from "./author-info";
 
+const DEFAULT_IMAGE_URL = "https://images.unsplash.com/photo-1557682250-33bd709cbe85?q=80&w=2070&auto=format&fit=crop";
+
 export interface Post {
-  imgSrc: string;
+  imgSrc?: string;
   category: string;
   title: string;
   excerpt: string;
@@ -21,7 +23,7 @@ export const BlogPostCard = ({ post }: BlogPostCardProps) => {
     <div className="group flex flex-col">
       <Link href="#" className="block overflow-hidden rounded-2xl mb-6">
         <img
-          src={post.imgSrc}
+          src={post.imgSrc || DEFAULT_IMAGE_URL}
           alt={`Ảnh bìa cho bài viết ${post.title}`}
           className="w-full aspect-[16/10] object-cover transition-transform duration-300 group-hover:scale-105"
         />

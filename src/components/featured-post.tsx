@@ -1,15 +1,8 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { Post } from "./blog-post-card";
 
-interface Post {
-  imgSrc: string;
-  category: string;
-  title: string;
-  excerpt: string;
-  author: string;
-  authorAvatar: string;
-  date: string;
-}
+const DEFAULT_IMAGE_URL = "https://images.unsplash.com/photo-1557682250-33bd709cbe85?q=80&w=2070&auto=format&fit=crop";
 
 interface FeaturedPostProps {
     post: Post;
@@ -18,7 +11,7 @@ interface FeaturedPostProps {
 export const FeaturedPost = ({ post }: FeaturedPostProps) => {
     return (
         <div className="relative rounded-2xl overflow-hidden group mt-12">
-            <img src={post.imgSrc} className="w-full h-[400px] md:h-[500px] object-cover" alt={`Ảnh bìa cho bài viết ${post.title}`} />
+            <img src={post.imgSrc || DEFAULT_IMAGE_URL} className="w-full h-[400px] md:h-[500px] object-cover" alt={`Ảnh bìa cho bài viết ${post.title}`} />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
             <div className="absolute bottom-0 left-0 p-6 md:p-10 text-white w-full md:w-3/4">
                 <p className="font-semibold mb-2 text-sm uppercase tracking-wider">{post.category}</p>
