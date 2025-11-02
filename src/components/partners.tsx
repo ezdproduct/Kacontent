@@ -26,11 +26,19 @@ export const Partners = () => {
           </p>
           <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-8 gap-y-12 place-items-center">
             {partnerLogos.map((logo, index) => (
-              <img
+              <div
                 key={index}
-                src={logo.src}
-                alt={logo.alt}
-                className="h-10 object-contain filter grayscale hover:filter-none hover:scale-110 transition-all duration-300"
+                className="h-10 w-32 bg-muted-foreground/50 hover:bg-primary transition-all duration-300"
+                style={{
+                  maskImage: `url(${logo.src})`,
+                  maskSize: 'contain',
+                  maskRepeat: 'no-repeat',
+                  maskPosition: 'center',
+                  WebkitMaskImage: `url(${logo.src})`,
+                  WebkitMaskSize: 'contain',
+                  WebkitMaskRepeat: 'no-repeat',
+                  WebkitMaskPosition: 'center',
+                }}
               />
             ))}
           </div>
