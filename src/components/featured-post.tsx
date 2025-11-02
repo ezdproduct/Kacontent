@@ -10,7 +10,7 @@ interface FeaturedPostProps {
 
 export const FeaturedPost = ({ post }: FeaturedPostProps) => {
     return (
-        <div className="relative rounded-2xl overflow-hidden group mt-12">
+        <div className="relative rounded-2xl overflow-hidden group">
             <img src={post.imgSrc || DEFAULT_IMAGE_URL} className="w-full h-[400px] md:h-[500px] object-cover" alt={`Ảnh bìa cho bài viết ${post.title}`} />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
             <div className="absolute bottom-0 left-0 p-6 md:p-10 text-white w-full md:w-3/4">

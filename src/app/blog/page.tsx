@@ -81,16 +81,6 @@ export default function BlogPage() {
       <main>
         <section className="py-12 lg:py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-8">
-              <p className="text-primary font-semibold">Our blog</p>
-              <h1 className="text-4xl lg:text-5xl font-extrabold text-foreground mt-2">
-                Resources and insights
-              </h1>
-              <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-                The latest industry news, interviews, technologies, and resources.
-              </p>
-            </div>
-            
             {featuredPost && <FeaturedPost post={featuredPost} />}
 
             <div className="mt-16">
