@@ -56,7 +56,7 @@ export const Header = () => {
           </div>
 
           {/* Navigation Links - Desktop */}
-          <div className="hidden md:flex md:items-center md:space-x-8">
+          <div className="hidden lg:flex lg:items-center lg:space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
@@ -75,7 +75,7 @@ export const Header = () => {
           <AuthButtons isScrolled={isScrolled} />
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
+          <div className="lg:hidden flex items-center">
             <button
               id="mobile-menu-button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -93,7 +93,7 @@ export const Header = () => {
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
-        className={`md:hidden bg-background ${isMenuOpen ? "block" : "hidden"}`}
+        className={`lg:hidden bg-background ${isMenuOpen ? "block" : "hidden"}`}
       >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           {navLinks.map((link) => (
