@@ -2,7 +2,7 @@ import { Briefcase, Trophy, Users, Zap } from "lucide-react";
 
 export const Achievements = () => {
   return (
-    <section className="bg-background py-16 lg:py-24">
+    <section className="bg-background py-16 lg:py-24 border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-extrabold text-primary">
@@ -43,7 +43,7 @@ export const Achievements = () => {
           </div>
         </div>
         
-        <div className="mt-16 pt-8 border-t border-border text-center">
+        <div className="mt-16 pt-8 text-center">
             <h3 className="text-2xl font-bold text-primary mb-4">KA Content Digital Marketing Ltd.</h3>
             <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
                 <span className="font-semibold text-primary">200+</span> Năm sáng lập & điều hành KA Content Digital Marketing Ltd. Tư vấn chiến lược nội dung & triển khai thực thi chiến dịch truyền thông tích hợp và sáng tạo đa kênh.
