@@ -25,7 +25,7 @@ const MarqueeContent = () => (
         <img
           src={logo.src}
           alt={logo.alt}
-          className="object-contain w-full h-full filter grayscale hover:filter-none transition-all duration-300"
+          className="object-contain w-full h-full filter brightness-0 invert"
         />
       </div>
     ))}
@@ -34,9 +34,9 @@ const MarqueeContent = () => (
 
 export const PartnerMarquee = () => {
   return (
-    <section className="py-12 bg-background overflow-hidden group">
+    <section className="py-12 bg-primary overflow-hidden group">
       <div className="text-center mb-8">
-        <p className="text-lg font-semibold text-muted-foreground">
+        <p className="text-lg font-semibold text-primary-foreground/80">
           Được tin tưởng bởi các thương hiệu hàng đầu
         </p>
       </div>
