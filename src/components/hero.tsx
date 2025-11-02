@@ -35,7 +35,7 @@ export const Hero = () => {
           {/* Cột hình ảnh */}
           <div className="flex justify-center">
             <img
-              src="https://placehold.co/500x600/e2e8f0/333?text=Chân+dung"
+              src="/images/nguyen-thuy-khanh-portrait.jpg"
               alt="Chân dung Nguyễn Thuỳ Khanh"
               className="rounded-lg shadow-xl w-full max-w-md object-cover"
             />
