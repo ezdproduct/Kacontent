@@ -34,3 +34,16 @@ export interface Podcast {
   category?: string;
   episodeNumber?: string;
 }
+
+export interface CalendarEvent {
+  id: number;
+  title: string;
+  host: string;
+  date: string; // YYYY-MM-DD
+  startTime: string; // HH:mm
+  endTime: string;   // HH:mm
+  location: string;
+  color: string; 
+  textColor: string;
+  borderColor: string;
+}

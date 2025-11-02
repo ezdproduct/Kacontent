@@ -138,7 +138,7 @@ export default function ContactPage() {
                         Nếu bạn cần tư vấn sâu hơn về chiến lược content hoặc các giải pháp marketing cho doanh nghiệp, hãy đặt lịch một buổi trao đổi trực tiếp với Khanh.
                     </p>
                     <Button asChild size="lg" className="mt-8">
-                        <Link href="#">Xem lịch và đặt hẹn</Link>
+                        <Link href="/booking">Xem lịch và đặt hẹn</Link>
                     </Button>
                 </div>
             </div>
