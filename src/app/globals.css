@@ -6,7 +6,7 @@
   :root {
     /* Colors from new UI Kit */
     --background: 228 100% 98%; /* #F4F6FF */
-    --foreground: 236 46% 36%; /* #333984 */
+    --foreground: 0 0% 0%; /* #000000 - Black */
  
     --primary: 231 100% 58%; /* #2949FF */
     --primary-foreground: 0 0% 100%; /* White */
@@ -15,15 +15,15 @@
     --secondary-foreground: 0 0% 100%; /* White */
 
     --muted: 231 100% 95%; /* Lighter version of primary */
-    --muted-foreground: 236 46% 36%;
+    --muted-foreground: 0 0% 40%; /* #666666 - Dark Grey */
  
     --accent: 231 100% 95%; /* Lighter version of primary */
-    --accent-foreground: 236 46% 36%;
+    --accent-foreground: 0 0% 0%;
     
     --card: 0 0% 100%;
-    --card-foreground: 236 46% 36%;
+    --card-foreground: 0 0% 0%;
     --popover: 0 0% 100%;
-    --popover-foreground: 236 46% 36%;
+    --popover-foreground: 0 0% 0%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
     --border: 231 100% 90%;
@@ -35,7 +35,7 @@
  
   .dark {
     --background: 236 46% 15%; /* Darker version of secondary */
-    --foreground: 228 100% 98%; /* Light background color */
+    --foreground: 0 0% 98%; /* Almost white */
  
     --primary: 231 100% 58%;
     --primary-foreground: 0 0% 100%;
@@ -44,15 +44,15 @@
     --secondary-foreground: 0 0% 100%;
  
     --muted: 236 46% 20%;
-    --muted-foreground: 228 100% 98%;
+    --muted-foreground: 0 0% 80%; /* Light Grey */
  
     --accent: 231 100% 58%;
     --accent-foreground: 0 0% 100%;
  
     --card: 236 46% 15%;
-    --card-foreground: 228 100% 98%;
+    --card-foreground: 0 0% 98%;
     --popover: 236 46% 15%;
-    --popover-foreground: 228 100% 98%;
+    --popover-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
     --border: 231 100% 58%;
