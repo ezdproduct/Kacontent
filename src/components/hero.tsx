@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { PartnerMarquee } from "./partner-marquee";
 
 export const Hero = () => {
   return (
@@ -23,25 +24,6 @@ export const Hero = () => {
           >
             Tích luỹ kiến thức
           </a>
-
-          {/* Phần đối tác */}
-          <div className="mt-12">
-            <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">
-              Với sự đồng hành của các đối tác hàng đầu
-            </h3>
-            <div className="flex flex-wrap gap-x-8 gap-y-4 items-center">
-              <span className="text-2xl font-bold text-gray-400">shondo</span>
-              <span className="text-2xl font-bold text-gray-400">
-                COOLMATE
-              </span>
-              <span className="text-2xl font-bold text-gray-400">
-                CONVERSE
-              </span>
-              <span className="text-2xl font-bold text-gray-400">haravan</span>
-              <span className="text-2xl font-bold text-gray-400">GC GROUP</span>
-              <span className="text-2xl font-bold text-gray-400">TikPlus</span>
-            </div>
-          </div>
         </div>
 
         {/* Cột hình ảnh */}
@@ -53,6 +35,9 @@ export const Hero = () => {
           />
         </div>
       </div>
+      
+      {/* Phần Marquee được đặt ngoài grid để chiếm toàn bộ chiều rộng */}
+      <PartnerMarquee />
     </header>
   );
 };
