@@ -1,23 +1,18 @@
-import { BookOpen, Share2, Star } from "lucide-react";
-
 export const Features = () => {
   const features = [
     {
-      icon: <BookOpen className="w-10 h-10 text-primary mb-4" />,
       title: "Blog của tôi",
       description:
         "Nơi tôi chia sẻ về content, tư duy và các câu chuyện làm nghề.",
       link: "#",
     },
     {
-      icon: <Share2 className="w-10 h-10 text-primary mb-4" />,
       title: "Chia sẻ của tôi",
       description:
         "Nơi tôi chia sẻ về các kiến thức, công cụ, Ebook... giúp bạn.",
       link: "#",
     },
     {
-      icon: <Star className="w-10 h-10 text-primary mb-4" />,
       title: "Review của tôi",
       description:
         "Nơi tôi chia sẻ về những trải nghiệm cá nhân về các sản phẩm.",
@@ -34,7 +29,6 @@ export const Features = () => {
               key={index}
               className="bg-card p-8 rounded-2xl shadow-lg border border-border transition-transform duration-300 hover:scale-105 hover:shadow-xl"
             >
-              {feature.icon}
               <h3 className="text-xl font-bold mb-2 text-foreground">{feature.title}</h3>
               <p className="text-muted-foreground mb-4">{feature.description}</p>
               <a
