@@ -15,14 +15,13 @@ export const Header = () => {
   ];
 
   return (
-    <nav className="bg-background/80 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+    <nav className="bg-primary shadow-lg sticky top-0 z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className="text-2xl font-bold">
-              <span className="text-primary">Ka</span>
-              <span className="text-primary">Content</span>
+            <Link href="/" className="text-2xl font-bold text-primary-foreground">
+              KaContent
             </Link>
           </div>
 
@@ -32,7 +31,7 @@ export const Header = () => {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-muted-foreground hover:text-primary font-medium transition-colors"
+                className="text-primary-foreground/80 hover:text-primary-foreground font-medium transition-colors"
               >
                 {link.label}
               </Link>
@@ -41,10 +40,10 @@ export const Header = () => {
 
           {/* Icons - Desktop */}
           <div className="hidden md:flex items-center space-x-4">
-            <button className="text-muted-foreground hover:text-primary transition-colors">
+            <button className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
               <Search className="w-6 h-6" />
             </button>
-            <button className="text-muted-foreground hover:text-primary transition-colors">
+            <button className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
               <User className="w-6 h-6" />
             </button>
           </div>
@@ -54,7 +53,7 @@ export const Header = () => {
             <button
               id="mobile-menu-button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-muted-foreground hover:text-primary"
+              className="text-primary-foreground"
             >
               <Menu className="w-6 h-6" />
             </button>
@@ -65,7 +64,7 @@ export const Header = () => {
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
-        className={`md:hidden ${isMenuOpen ? "block" : "hidden"}`}
+        className={`md:hidden bg-background ${isMenuOpen ? "block" : "hidden"}`}
       >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           {navLinks.map((link) => (
