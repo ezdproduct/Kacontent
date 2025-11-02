@@ -7,8 +7,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, CalendarDays } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
+import Link from "next/link";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -125,6 +126,22 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* Booking Section */}
+        <section className="py-12 lg:py-20 bg-muted">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center max-w-2xl mx-auto">
+                    <CalendarDays className="w-12 h-12 text-primary mx-auto mb-4" />
+                    <h2 className="text-3xl font-bold text-foreground">Đặt Lịch Tư Vấn 1:1</h2>
+                    <p className="text-muted-foreground mt-4">
+                        Nếu bạn cần tư vấn sâu hơn về chiến lược content hoặc các giải pháp marketing cho doanh nghiệp, hãy đặt lịch một buổi trao đổi trực tiếp với Khanh.
+                    </p>
+                    <Button asChild size="lg" className="mt-8">
+                        <Link href="#">Xem lịch và đặt hẹn</Link>
+                    </Button>
+                </div>
+            </div>
         </section>
       </main>
       <Footer />
