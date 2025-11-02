@@ -56,11 +56,13 @@ const categories = ["all", ...new Set(allCourses.map((course) => course.category
 export default function CoursesPage() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [sortOrder, setSortOrder] = useState("default");
   const [filteredCourses, setFilteredCourses] = useState(allCourses);
 
   useEffect(() => {
-    let courses = allCourses;
+    let courses = [...allCourses];
 
+    // Filtering
     if (searchTerm) {
       courses = courses.filter((course) =>
         course.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -71,8 +73,15 @@ export default function CoursesPage() {
       courses = courses.filter((course) => course.category === selectedCategory);
     }
 
+    // Sorting
+    if (sortOrder === "price-asc") {
+      courses.sort((a, b) => a.price - b.price);
+    } else if (sortOrder === "price-desc") {
+      courses.sort((a, b) => b.price - a.price);
+    }
+
     setFilteredCourses(courses);
-  }, [searchTerm, selectedCategory]);
+  }, [searchTerm, selectedCategory, sortOrder]);
 
   return (
     <div className="bg-background text-foreground">
@@ -86,6 +95,8 @@ export default function CoursesPage() {
               selectedCategory={selectedCategory}
               setSelectedCategory={setSelectedCategory}
               categories={categories}
+              sortOrder={sortOrder}
+              setSortOrder={setSortOrder}
             />
             {filteredCourses.length > 0 ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
