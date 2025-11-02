@@ -39,6 +39,7 @@ export interface CalendarEvent {
   id: number;
   title: string;
   host: string;
+  hostAvatar?: string;
   date: string; // YYYY-MM-DD
   startTime: string; // HH:mm
   endTime: string;   // HH:mm
