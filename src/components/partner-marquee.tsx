@@ -19,23 +19,30 @@ const partnerLogos = [
   { src: "/logos/partners/mitsubishi.png", alt: "Mitsubishi" },
 ];
 
-// Lặp lại danh sách để đảm bảo hiệu ứng chạy liên tục
-const partners = [...partnerLogos, ...partnerLogos];
-
 export const PartnerMarquee = () => {
   return (
-    <div className="mt-12 overflow-hidden py-8 border-y border-blue-700 bg-blue-900">
+    <div className="mt-12 overflow-hidden py-8 border-y border-blue-700 bg-blue-900 group">
       <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-6 text-center">
         Với sự đồng hành của các đối tác hàng đầu
       </h3>
       <div className="flex whitespace-nowrap">
-        <div className="flex space-x-16 animate-marquee items-center">
-          {partners.map((partner, index) => (
-            <div key={index} className="flex-shrink-0 w-40 h-12 relative opacity-80 hover:opacity-100 transition duration-300">
+        <div className="flex space-x-32 animate-marquee items-center group-hover:[animation-play-state:paused]">
+          {/* Render logos lần 1 */}
+          {partnerLogos.map((partner, index) => (
+            <div key={index} className="flex-shrink-0 w-80 h-24 relative opacity-80 hover:opacity-100 transition duration-300">
               <img
                 src={partner.src}
                 alt={partner.alt}
-                // Áp dụng filter để logo hiển thị màu sáng trên nền tối
+                className="object-contain w-full h-full filter grayscale invert"
+              />
+            </div>
+          ))}
+          {/* Render logos lần 2 để lặp lại liền mạch */}
+          {partnerLogos.map((partner, index) => (
+            <div key={`duplicate-${index}`} className="flex-shrink-0 w-80 h-24 relative opacity-80 hover:opacity-100 transition duration-300">
+              <img
+                src={partner.src}
+                alt={partner.alt}
                 className="object-contain w-full h-full filter grayscale invert"
               />
             </div>
