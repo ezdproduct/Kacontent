@@ -35,7 +35,7 @@ export const Features = () => {
               className="bg-card p-8 rounded-2xl shadow-lg border border-border transition-transform duration-300 hover:scale-105 hover:shadow-xl"
             >
               {feature.icon}
-              <h3 className="text-xl font-bold mb-2 text-foreground">{feature.title}</h3>
+              <h3 className="text-xl font-bold mb-2 text-primary">{feature.title}</h3>
               <p className="text-muted-foreground mb-4">{feature.description}</p>
               <a
                 href={feature.link}

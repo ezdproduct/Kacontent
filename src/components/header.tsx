@@ -21,7 +21,7 @@ export const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="text-2xl font-bold">
-              <span className="text-foreground">Ka</span>
+              <span className="text-primary">Ka</span>
               <span className="text-primary">Content</span>
             </Link>
           </div>

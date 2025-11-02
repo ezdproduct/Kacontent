@@ -10,7 +10,7 @@ export const Footer = () => {
             {/* Cột 1: Giới thiệu */}
             <div>
               <Link href="/" className="text-2xl font-bold">
-                <span className="text-foreground">Ka</span>
+                <span className="text-primary">Ka</span>
                 <span className="text-primary">Content</span>
               </Link>
               <p className="mt-4 text-sm text-muted-foreground">
@@ -35,7 +35,7 @@ export const Footer = () => {
 
             {/* Cột 2: Nội dung */}
             <div>
-              <h4 className="text-lg font-semibold text-foreground mb-4">Nội dung</h4>
+              <h4 className="text-lg font-semibold text-primary mb-4">Nội dung</h4>
               <ul className="space-y-2">
                 <li><a href="#" className="text-sm text-muted-foreground hover:text-primary">Sharing</a></li>
                 <li><a href="#" className="text-sm text-muted-foreground hover:text-primary">Podcast</a></li>
@@ -47,7 +47,7 @@ export const Footer = () => {
 
             {/* Cột 3: Chính sách */}
             <div>
-              <h4 className="text-lg font-semibold text-foreground mb-4">
+              <h4 className="text-lg font-semibold text-primary mb-4">
                 Chính sách
               </h4>
               <ul className="space-y-2">
@@ -59,7 +59,7 @@ export const Footer = () => {
 
             {/* Cột 4: Newsletter */}
             <div>
-              <h4 className="text-lg font-semibold text-foreground mb-4">
+              <h4 className="text-lg font-semibold text-primary mb-4">
                 Đăng ký nhận tin
               </h4>
               <p className="text-sm text-muted-foreground mb-4">

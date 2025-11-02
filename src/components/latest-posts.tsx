@@ -27,7 +27,7 @@ export const LatestPosts = () => {
     <section className="bg-muted py-16 lg:py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-extrabold text-foreground">
+          <h2 className="text-3xl lg:text-4xl font-extrabold text-primary">
             Nội Dung Mới Nhất
           </h2>
           <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
@@ -50,7 +50,7 @@ export const LatestPosts = () => {
                 />
               </Link>
               <div className="p-6 flex-grow">
-                <h3 className="text-xl font-bold mb-3 text-foreground">
+                <h3 className="text-xl font-bold mb-3 text-primary">
                   <Link href="#" className="hover:text-primary transition-colors">
                     {post.title}
                   </Link>
