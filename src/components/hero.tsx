@@ -39,7 +39,7 @@ export const Hero = () => {
             <img
               src="/images/nguyen-thuy-khanh-portrait.jpg"
               alt="Chân dung Nguyễn Thuỳ Khanh"
-              className="rounded-2xl shadow-xl w-full aspect-[4/5] object-cover lg:max-h-[600px]"
+              className="rounded-2xl shadow-xl w-full aspect-[4/5] object-cover lg:max-h-[500px]"
             />
           </div>
         </div>

@@ -11,7 +11,7 @@ export const About = () => {
             <img
               src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop"
               alt="Một người đang làm việc trên laptop"
-              className="rounded-2xl shadow-xl w-full aspect-[4/5] object-cover lg:max-h-[600px]"
+              className="rounded-2xl shadow-xl w-full aspect-[4/5] object-cover lg:max-h-[500px]"
             />
           </div>
 
