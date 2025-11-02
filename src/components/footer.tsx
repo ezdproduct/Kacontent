@@ -9,8 +9,8 @@ export const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {/* Cột 1: Giới thiệu */}
             <div>
-              <Link href="/" className="text-2xl font-bold text-primary">
-                KaContent
+              <Link href="/">
+                <img src="/logo.svg" alt="KaContent Logo" className="h-8 w-auto filter brightness-0 invert" />
               </Link>
               <p className="mt-4 text-sm text-muted-foreground">
                 Chia sẻ kiến thức, tư duy và trải nghiệm về xây dựng nội dung đa
