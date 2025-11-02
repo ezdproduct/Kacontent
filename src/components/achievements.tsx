@@ -4,7 +4,7 @@ import { AnimatedCounter } from "./animated-counter";
 
 export const Achievements = () => {
   return (
-    <section className="bg-background py-12 lg:py-20 border-t border-border">
+    <section className="bg-background py-12 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-extrabold text-foreground">
