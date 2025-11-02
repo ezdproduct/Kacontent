@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { PartnerMarquee } from "./partner-marquee";
 
 export const Hero = () => {
   return (
@@ -41,9 +40,6 @@ export const Hero = () => {
           />
         </div>
       </div>
-      
-      {/* Phần Marquee được đặt ngoài grid để chiếm toàn bộ chiều rộng */}
-      <PartnerMarquee />
     </header>
   );
 };
