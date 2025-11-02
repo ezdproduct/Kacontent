@@ -4,8 +4,11 @@ import { useState, useEffect } from "react";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { CourseCard } from "@/components/course-card";
-import { CourseFilters } from "@/components/course-filters";
 import { PageHeader } from "@/components/page-header";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Separator } from "@/components/ui/separator";
 
 const allCourses = [
     {
@@ -63,24 +66,17 @@ export default function CoursesPage() {
   useEffect(() => {
     let courses = [...allCourses];
 
-    // Filtering
     if (searchTerm) {
-      courses = courses.filter((course) =>
-        course.title.toLowerCase().includes(searchTerm.toLowerCase())
-      );
+      courses = courses.filter((course) => course.title.toLowerCase().includes(searchTerm.toLowerCase()));
     }
-
     if (selectedCategory !== "all") {
       courses = courses.filter((course) => course.category === selectedCategory);
     }
-
-    // Sorting
     if (sortOrder === "price-asc") {
       courses.sort((a, b) => a.price - b.price);
     } else if (sortOrder === "price-desc") {
       courses.sort((a, b) => b.price - a.price);
     }
-
     setFilteredCourses(courses);
   }, [searchTerm, selectedCategory, sortOrder]);
 
@@ -94,27 +90,59 @@ export default function CoursesPage() {
               title="Các Khóa Học"
               subtitle="Nâng cấp kỹ năng content và marketing của bạn với các khóa học chuyên sâu, thực chiến từ KA Content."
             />
-            <CourseFilters
-              searchTerm={searchTerm}
-              setSearchTerm={setSearchTerm}
-              selectedCategory={selectedCategory}
-              setSelectedCategory={setSelectedCategory}
-              categories={categories}
-              sortOrder={sortOrder}
-              setSortOrder={setSortOrder}
-            />
-            {filteredCourses.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredCourses.map((course, index) => (
-                  <CourseCard key={index} course={course} />
-                ))}
+            
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              {/* Sidebar */}
+              <aside className="md:col-span-1 md:sticky md:top-24 h-fit">
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="font-bold mb-2">Tìm kiếm</h3>
+                    <Input placeholder="Tìm theo tên..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+                  </div>
+                  <Separator />
+                  <div>
+                    <h3 className="font-bold mb-2">Sắp xếp theo</h3>
+                    <Select value={sortOrder} onValueChange={setSortOrder}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Mặc định" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="default">Mặc định</SelectItem>
+                        <SelectItem value="price-asc">Giá: Thấp đến cao</SelectItem>
+                        <SelectItem value="price-desc">Giá: Cao đến thấp</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  <Separator />
+                  <div>
+                    <h3 className="font-bold mb-2">Danh mục</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {categories.map((category) => (
+                        <Button key={category} size="sm" variant={selectedCategory === category ? "default" : "outline"} onClick={() => setSelectedCategory(category)} className="rounded-full">
+                          {category === 'all' ? 'Tất cả' : category}
+                        </Button>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </aside>
+
+              {/* Content */}
+              <div className="md:col-span-3">
+                {filteredCourses.length > 0 ? (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+                    {filteredCourses.map((course, index) => (
+                      <CourseCard key={index} course={course} />
+                    ))}
+                  </div>
+                ) : (
+                  <div className="text-center py-16 border rounded-lg">
+                    <h3 className="text-2xl font-bold">Không tìm thấy khóa học phù hợp</h3>
+                    <p className="text-muted-foreground mt-2">Vui lòng thử lại với bộ lọc khác.</p>
+                  </div>
+                )}
               </div>
-            ) : (
-              <div className="text-center py-16">
-                <h3 className="text-2xl font-bold">Không tìm thấy khóa học phù hợp</h3>
-                <p className="text-muted-foreground mt-2">Vui lòng thử lại với từ khóa hoặc danh mục khác.</p>
-              </div>
-            )}
+            </div>
           </div>
         </section>
       </main>
