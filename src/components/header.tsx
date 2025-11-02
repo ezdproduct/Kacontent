@@ -35,8 +35,9 @@ export const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/">
+            <Link href="/" className="flex items-center gap-2">
               <img src="/logo.svg" alt="KaContent Logo" className="h-8 w-auto filter brightness-0 invert" />
+              <span className="text-xl font-bold text-primary-foreground">KA Content</span>
             </Link>
           </div>
 
