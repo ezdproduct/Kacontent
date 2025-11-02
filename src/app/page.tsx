@@ -1,5 +1,6 @@
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
+import { CompanyIntro } from "@/components/company-intro";
 import { Features } from "@/components/features";
 import { About } from "@/components/about";
 import { LatestPosts } from "@/components/latest-posts";
@@ -13,6 +14,7 @@ export default function Home() {
       <Header />
       <main className="animate-fade-in">
         <Hero />
+        <CompanyIntro />
         <Features />
         <About />
         <Partners />

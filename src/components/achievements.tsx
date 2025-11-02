@@ -40,13 +40,6 @@ export const Achievements = () => {
             <p className="text-sm text-muted-foreground mt-2">Sáng lập & Admin cộng đồng "Content khó lờ idea".</p>
           </div>
         </div>
-        
-        <div className="mt-16 pt-8 text-center">
-            <h3 className="text-2xl font-bold text-foreground mb-4">KA Content Digital Marketing Ltd.</h3>
-            <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
-                <span className="font-semibold text-primary">200+</span> Năm sáng lập & điều hành KA Content Digital Marketing Ltd. Tư vấn chiến lược nội dung & triển khai thực thi chiến dịch truyền thông tích hợp và sáng tạo đa kênh.
-            </p>
-        </div>
       </div>
     </section>
   );
