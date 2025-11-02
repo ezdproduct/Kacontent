@@ -9,8 +9,8 @@ export const Footer = () => {
           {/* Cột 1: Giới thiệu */}
           <div>
             <Link href="/" className="text-2xl font-bold">
-              <span className="text-white">NHÃN NGUYỄN</span>
-              <span className="text-blue-500">SHARING</span>
+              <span className="text-white">Ka</span>
+              <span className="text-blue-500">Content</span>
             </Link>
             <p className="mt-4 text-sm text-gray-400">
               Chia sẻ kiến thức, tư duy và trải nghiệm về xây dựng nội dung đa
@@ -94,7 +94,7 @@ export const Footer = () => {
               Đăng ký nhận tin
             </h4>
             <p className="text-sm text-gray-400 mb-4">
-              Đừng bỏ lỡ những bài viết mới nhất từ Nhãn Nguyễn.
+              Đừng bỏ lỡ những bài viết mới nhất từ Ka Content.
             </p>
             <form action="#" method="POST">
               <div className="flex flex-col sm:flex-row gap-2">
@@ -122,7 +122,7 @@ export const Footer = () => {
         {/* Dòng bản quyền */}
         <div className="mt-12 pt-8 border-t border-gray-700 text-center">
           <p className="text-sm text-gray-500">
-            &copy; 2025 Nhãn Nguyễn Sharing. Đã đăng ký bản quyền.
+            &copy; 2025 Ka Content. Đã đăng ký bản quyền.
           </p>
         </div>
       </div>

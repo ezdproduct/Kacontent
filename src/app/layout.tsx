@@ -8,7 +8,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Nhãn Nguyễn Sharing - Giao diện",
+  title: "Ka Content - Giao diện",
   description: "Giúp Creator xây dựng content đa nền tảng",
 };
 

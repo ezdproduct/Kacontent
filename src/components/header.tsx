@@ -22,8 +22,8 @@ export const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="text-2xl font-bold">
-              <span className="text-gray-900">NHÃN NGUYỄN</span>
-              <span className="text-blue-600">SHARING</span>
+              <span className="text-gray-900">Ka</span>
+              <span className="text-blue-600">Content</span>
             </Link>
           </div>
 
