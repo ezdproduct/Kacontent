@@ -3,7 +3,7 @@ import Image from "next/image";
 export const Hero = () => {
   return (
     <section className="py-16 lg:py-24">
-      <div className="container mx-auto px-3">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Cột văn bản */}
           <div>

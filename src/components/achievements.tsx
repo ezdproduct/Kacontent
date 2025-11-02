@@ -3,7 +3,7 @@ import { Briefcase, Trophy, Users, Zap } from "lucide-react";
 export const Achievements = () => {
   return (
     <section className="bg-background py-16 lg:py-24 border-t border-border">
-      <div className="container mx-auto px-3">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-extrabold text-foreground">
             Hành Trình & Thành Tựu
