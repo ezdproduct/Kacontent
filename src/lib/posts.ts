@@ -46,8 +46,8 @@ async function fetchWordPressPosts(): Promise<Post[]> {
       date: new Date(post.date).toLocaleDateString('vi-VN', { day: 'numeric', month: 'short', year: 'numeric' }),
       imgSrc: post._embedded?.['wp:featuredmedia']?.[0]?.source_url,
       category: post._embedded?.['wp:term']?.[0]?.[0]?.name || 'Uncategorized',
-      author: post._embedded?.author?.[0]?.name || 'KA Content',
-      authorAvatar: post._embedded?.author?.[0]?.avatar_urls?.['96'] || '/images/nguyen-thuy-khanh-portrait.jpg',
+      author: "Khanh Nguyễn",
+      authorAvatar: "/images/nguyen-thuy-khanh-portrait.jpg",
     }));
   } catch (error) {
     console.error("Error fetching WordPress posts:", error);
