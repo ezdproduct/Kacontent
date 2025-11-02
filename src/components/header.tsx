@@ -29,8 +29,8 @@ export const Header = () => {
   return (
     <nav
       className={cn(
-        "sticky top-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-primary shadow-lg" : "bg-transparent pt-4" // Add padding top when transparent
+        "sticky top-0 z-50 transition-all duration-300 shadow-lg",
+        isScrolled ? "bg-primary" : "bg-transparent"
       )}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">

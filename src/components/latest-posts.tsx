@@ -53,7 +53,7 @@ export const LatestPosts = () => {
                   <img
                     src={post.imgSrc}
                     alt="Ảnh bìa bài viết"
-                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                 </Link>
                 <div className="absolute top-4 left-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
