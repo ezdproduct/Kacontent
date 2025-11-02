@@ -37,11 +37,11 @@ export const Footer = () => {
             <div>
               <h4 className="text-lg font-semibold text-foreground mb-4">Nội dung</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-primary">Sharing</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-primary">Podcast</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-primary">Toolbox</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-primary">Articles</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-primary">Câu chuyện</a></li>
+                <li><Link href="/courses" className="text-sm text-muted-foreground hover:text-primary">Khóa Học</Link></li>
+                <li><Link href="/resource" className="text-sm text-muted-foreground hover:text-primary">Resource</Link></li>
+                <li><Link href="/blog" className="text-sm text-muted-foreground hover:text-primary">Blog</Link></li>
+                <li><Link href="/podcast" className="text-sm text-muted-foreground hover:text-primary">Podcast</Link></li>
+                <li><Link href="/affiliate" className="text-sm text-muted-foreground hover:text-primary">Affiliate</Link></li>
               </ul>
             </div>
 
@@ -53,7 +53,7 @@ export const Footer = () => {
               <ul className="space-y-2">
                 <li><a href="#" className="text-sm text-muted-foreground hover:text-primary">Điều khoản dịch vụ</a></li>
                 <li><a href="#" className="text-sm text-muted-foreground hover:text-primary">Chính sách bảo mật</a></li>
-                <li><a href="#" className="text-sm text-muted-foreground hover:text-primary">Liên hệ</a></li>
+                <li><Link href="/contact" className="text-sm text-muted-foreground hover:text-primary">Liên hệ</Link></li>
               </ul>
             </div>
 
