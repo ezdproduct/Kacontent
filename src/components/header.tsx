@@ -43,7 +43,7 @@ export const Header = () => {
                 alt="KaContent Logo" 
                 className={cn(
                   "h-8 w-auto transition-all duration-300",
-                  isScrolled && "filter brightness-0 invert"
+                  isScrolled ? "filter brightness-0 invert" : "filter-to-primary"
                 )}
               />
               <span className={cn(

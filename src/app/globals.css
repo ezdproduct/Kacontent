@@ -74,16 +74,8 @@
   }
 }
 
-/* Custom Marquee CSS */
-@keyframes marquee {
-  from {
-    transform: translateX(0);
+@layer utilities {
+  .filter-to-primary {
+    filter: invert(24%) sepia(95%) saturate(2375%) hue-rotate(221deg) brightness(102%) contrast(106%);
   }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-marquee {
-  animation: marquee 60s linear infinite;
 }
