@@ -35,11 +35,11 @@ export const Hero = () => {
           </div>
 
           {/* Cột hình ảnh */}
-          <div className="flex justify-center">
+          <div className="flex justify-end">
             <img
               src="/images/nguyen-thuy-khanh-portrait.jpg"
               alt="Chân dung Nguyễn Thuỳ Khanh"
-              className="rounded-2xl shadow-xl w-full aspect-[4/5] object-cover lg:max-h-[500px]"
+              className="rounded-2xl shadow-xl w-auto h-auto lg:max-h-[500px]"
             />
           </div>
         </div>

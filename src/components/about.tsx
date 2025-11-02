@@ -7,11 +7,11 @@ export const About = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Cột hình ảnh */}
-          <div className="flex justify-center">
+          <div className="flex justify-end">
             <img
               src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop"
               alt="Một người đang làm việc trên laptop"
-              className="rounded-2xl shadow-xl w-full aspect-[4/5] object-cover lg:max-h-[500px]"
+              className="rounded-2xl shadow-xl w-auto h-auto lg:max-h-[500px]"
             />
           </div>
 
