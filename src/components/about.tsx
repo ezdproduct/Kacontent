@@ -8,7 +8,7 @@ export const About = () => {
         <div className="flex justify-center">
           <img
             src="https://placehold.co/500x650/e2e8f0/333?text=Ảnh+toàn+thân"
-            alt="Ảnh toàn thân Nhân Nguyễn"
+            alt="Ảnh toàn thân Nguyễn Thùy Khanh"
             className="rounded-lg shadow-xl w-full max-w-md object-cover"
           />
         </div>
@@ -16,23 +16,17 @@ export const About = () => {
         {/* Cột văn bản */}
         <div className="md:order-first">
           <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6">
-            Nhân Nguyễn là ai?
+            Về Nguyễn Thùy Khanh
           </h2>
           <div className="space-y-4 text-lg text-gray-600">
             <p>
-              &quot;Không bao giờ được phép &apos;thôi kệ&apos; hay &apos;làm
-              cho có&apos; với công việc mình đang làm&quot;
+              Mình là Nguyễn Thùy Khanh — người sáng lập KA Content.
             </p>
             <p>
-              Đó là kim chỉ nam trong suốt chặng đường 10 năm làm nghề của
-              mình. Quan điểm &quot;sống có giá trị&quot; đã thôi thúc Nhân
-              không ngừng học hỏi, làm việc và chia sẻ.
+              Sau hơn 20 năm làm việc trong ngành quảng cáo và truyền thông, mình nhận ra một điều: nội dung chỉ thật sự mạnh mẽ khi nó được dẫn dắt bởi tư duy chiến lược.
             </p>
             <p>
-              Sharing Blog là nơi mình chia sẻ những kiến thức, trải nghiệm về
-              Content, tư duy và các câu chuyện làm nghề. Mong rằng những nội
-              dung này sẽ là nguồn tham khảo hữu ích và tiết kiệm thời gian cho
-              bạn.
+              Mình giúp doanh nghiệp và đội ngũ của bạn nhìn thấy rõ mục tiêu, kể câu chuyện thương hiệu một cách mạch lạc — để mỗi nội dung không chỉ “hay”, mà còn “hiệu quả”.
             </p>
           </div>
           <a
