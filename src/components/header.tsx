@@ -45,7 +45,7 @@ export const Header = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Đăng nhập/Đăng ký với số điện thoại:", phone);
-    alert(`Đã gửi mã OTP đến số: ${phone}`);
+    alert(`Hệ thống đang xử lý đăng nhập cho số điện thoại: ${phone}`);
   };
 
   return (
@@ -143,7 +143,7 @@ export const Header = () => {
         <DialogHeader>
           <DialogTitle>Đăng nhập hoặc Đăng ký</DialogTitle>
           <DialogDescription>
-            Nhập số điện thoại của bạn để tiếp tục. Chúng tôi sẽ gửi cho bạn một mã OTP để xác thực.
+            Nhập số điện thoại của bạn để tiếp tục. Hệ thống automation của chúng tôi sẽ tự động đăng nhập hoặc tạo tài khoản cho bạn.
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit}>
@@ -164,7 +164,7 @@ export const Header = () => {
             </div>
           </div>
           <DialogFooter>
-            <Button type="submit">Gửi mã OTP</Button>
+            <Button type="submit">Tiếp tục</Button>
           </DialogFooter>
         </form>
       </DialogContent>
