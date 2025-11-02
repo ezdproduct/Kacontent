@@ -9,7 +9,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 
 interface CourseFiltersProps {
   searchTerm: string;
@@ -30,7 +29,6 @@ export const CourseFilters = ({
   sortOrder,
   setSortOrder,
 }: CourseFiltersProps) => {
-  // We remove 'all' for the tags display but keep it for the dropdown logic
   const displayCategories = categories.filter(c => c !== 'all');
 
   return (
@@ -67,16 +65,20 @@ export const CourseFilters = ({
       </div>
       <div className="flex flex-wrap gap-2 mt-4">
         <Button
+            size="sm"
             variant={selectedCategory === 'all' ? "default" : "outline"}
             onClick={() => setSelectedCategory('all')}
+            className="rounded-full"
           >
             Tất cả
         </Button>
         {displayCategories.map((category) => (
           <Button
             key={category}
+            size="sm"
             variant={selectedCategory === category ? "default" : "outline"}
             onClick={() => setSelectedCategory(category)}
+            className="rounded-full"
           >
             {category}
           </Button>

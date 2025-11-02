@@ -5,6 +5,9 @@ import Link from "next/link";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AuthButtons } from "./auth-buttons";
+import { Button } from "./ui/button";
+import { DialogTrigger } from "./ui/dialog";
+import { Separator } from "./ui/separator";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,11 +23,10 @@ export const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
+  const navLinks: { href: string; label: string }[] = [
     { href: "/courses", label: "Khóa Học" },
     { href: "/resource", label: "Resource" },
     { href: "/blog", label: "Blog" },
-    { href: "/podcast", label: "Podcast" },
     { href: "/affiliate", label: "Affiliate" },
     { href: "/contact", label: "Liên Hệ" },
   ];
@@ -106,6 +108,15 @@ export const Header = () => {
               {link.label}
             </Link>
           ))}
+          <Separator className="my-2" />
+          <div className="px-3 pt-2 pb-3 space-y-2">
+            <DialogTrigger asChild>
+              <Button variant="outline" className="w-full font-bold">Đăng nhập</Button>
+            </DialogTrigger>
+            <DialogTrigger asChild>
+              <Button className="w-full font-bold">Đăng ký</Button>
+            </DialogTrigger>
+          </div>
         </div>
       </div>
     </nav>
