@@ -22,7 +22,7 @@ export const Header = () => {
   const navLinks = [
     { href: "#", label: "Khóa Học" },
     { href: "#", label: "Mẫu Content" },
-    { href: "#", label: "Blog" },
+    { href: "/blog", label: "Blog" },
     { href: "#", label: "Liên Hệ" },
   ];
 

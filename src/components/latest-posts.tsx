@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { MoveRight } from "lucide-react";
+import { BlogPostCard } from "./blog-post-card";
 
 export const LatestPosts = () => {
   const posts = [
@@ -44,47 +44,18 @@ export const LatestPosts = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {posts.map((post, index) => (
-            <div
-              key={index}
-              className="bg-card rounded-2xl shadow-lg overflow-hidden flex flex-col group"
-            >
-              <div className="relative">
-                <Link href="#" className="block overflow-hidden">
-                  <img
-                    src={post.imgSrc}
-                    alt="Ảnh bìa bài viết"
-                    className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </Link>
-                <div className="absolute top-4 left-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
-                  {post.category}
-                </div>
-                <div className="absolute bottom-4 right-4 bg-black/50 text-white text-xs px-3 py-1 rounded-full backdrop-blur-sm">
-                  {post.author}
-                </div>
-              </div>
-              <div className="p-6 flex-grow flex flex-col">
-                <h3 className="text-xl font-bold mb-3 text-foreground">
-                  <Link href="#" className="hover:text-primary transition-colors">
-                    {post.title}
-                  </Link>
-                </h3>
-                <p className="text-muted-foreground text-sm line-clamp-3 flex-grow">
-                  {post.excerpt}
-                </p>
-              </div>
-            </div>
+            <BlogPostCard key={index} post={post} />
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <a
-            href="#"
+          <Link
+            href="/blog"
             className="inline-flex items-center gap-2 border border-primary text-primary font-semibold px-8 py-3 rounded-lg hover:bg-primary hover:text-primary-foreground transition-colors duration-300 group"
           >
             Đọc blog của Khanh Nguyễn
             <MoveRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>
