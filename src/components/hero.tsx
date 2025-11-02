@@ -4,7 +4,7 @@ import { MoveRight } from "lucide-react";
 export const Hero = () => {
   return (
     <section className="pt-8 pb-12 lg:pt-16 lg:pb-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Cột văn bản */}
           <div>
