@@ -75,7 +75,14 @@
 }
 
 @layer utilities {
-  .filter-to-primary {
-    filter: invert(24%) sepia(95%) saturate(2375%) hue-rotate(221deg) brightness(102%) contrast(106%);
+  .logo-mask {
+    -webkit-mask-image: url(/logo.svg);
+    mask-image: url(/logo.svg);
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
   }
 }

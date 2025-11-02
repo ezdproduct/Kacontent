@@ -38,12 +38,10 @@ export const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center gap-2">
-              <img 
-                src="/logo.svg" 
-                alt="KaContent Logo" 
+              <div 
                 className={cn(
-                  "h-8 w-auto transition-all duration-300",
-                  isScrolled ? "filter brightness-0 invert" : "filter-to-primary"
+                  "h-8 w-8 logo-mask transition-all duration-300",
+                  isScrolled ? "bg-primary-foreground" : "bg-primary"
                 )}
               />
               <span className={cn(

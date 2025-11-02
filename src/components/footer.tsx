@@ -10,7 +10,7 @@ export const Footer = () => {
             {/* Cột 1: Giới thiệu */}
             <div>
               <Link href="/" className="flex items-center gap-2">
-                <img src="/logo.svg" alt="KaContent Logo" className="h-8 w-auto filter brightness-0 invert" />
+                <div className="h-8 w-8 logo-mask bg-primary" />
                 <span className="text-lg font-bold text-primary">KA Content</span>
               </Link>
               <p className="mt-4 text-sm text-muted-foreground">
