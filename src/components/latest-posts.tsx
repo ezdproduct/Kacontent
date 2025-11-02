@@ -47,7 +47,7 @@ export const LatestPosts = () => {
                   <img
                     src={post.imgSrc}
                     alt="Ảnh bìa bài viết"
-                    className="w-full h-56 object-cover"
+                    className="w-full aspect-square object-cover"
                   />
                 </Link>
                 <div className="p-6 flex-grow">
