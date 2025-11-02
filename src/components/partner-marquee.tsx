@@ -24,8 +24,8 @@ const partners = [...partnerLogos, ...partnerLogos];
 
 export const PartnerMarquee = () => {
   return (
-    <div className="mt-12 overflow-hidden py-8 border-y border-gray-200 bg-white">
-      <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-6 text-center">
+    <div className="mt-12 overflow-hidden py-8 border-y border-blue-200 bg-blue-50">
+      <h3 className="text-sm font-semibold text-blue-700 uppercase tracking-wider mb-6 text-center">
         Với sự đồng hành của các đối tác hàng đầu
       </h3>
       <div className="flex whitespace-nowrap">
@@ -35,7 +35,8 @@ export const PartnerMarquee = () => {
               <img
                 src={partner.src}
                 alt={partner.alt}
-                className="object-contain w-full h-full filter grayscale brightness-0 invert"
+                // Loại bỏ filter grayscale/invert để logo hiển thị màu gốc hoặc màu tối trên nền sáng
+                className="object-contain w-full h-full"
               />
             </div>
           ))}
