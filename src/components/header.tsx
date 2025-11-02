@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Search, User, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { AuthButtons } from "./auth-buttons";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -70,21 +71,8 @@ export const Header = () => {
             ))}
           </div>
 
-          {/* Icons - Desktop */}
-          <div className="hidden md:flex items-center space-x-4">
-            <button className={cn(
-              "transition-colors duration-300",
-              isScrolled ? "text-primary-foreground/80 hover:text-primary-foreground" : "text-foreground hover:text-primary"
-            )}>
-              <Search className="w-6 h-6" />
-            </button>
-            <button className={cn(
-              "transition-colors duration-300",
-              isScrolled ? "text-primary-foreground/80 hover:text-primary-foreground" : "text-foreground hover:text-primary"
-            )}>
-              <User className="w-6 h-6" />
-            </button>
-          </div>
+          {/* Auth Buttons - Desktop */}
+          <AuthButtons isScrolled={isScrolled} />
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
