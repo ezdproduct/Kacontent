@@ -25,7 +25,7 @@ export const Header = () => {
     { href: "#", label: "Resource" },
     { href: "/blog", label: "Blog" },
     { href: "/affiliate", label: "Affiliate" },
-    { href: "#", label: "Liên Hệ" },
+    { href: "/contact", label: "Liên Hệ" },
   ];
 
   return (
