@@ -33,5 +33,4 @@ export interface Podcast {
   duration: string;
   category?: string;
   episodeNumber?: string;
-  bgColor?: string;
 }

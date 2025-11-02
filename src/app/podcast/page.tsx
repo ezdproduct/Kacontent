@@ -10,12 +10,12 @@ import { PageHeader } from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 
 const allPodcasts: Podcast[] = [
-  { episodeNumber: "06", title: "Nghệ Thuật Kể Chuyện Trong Marketing", author: "Khanh Nguyễn", duration: "55:00 min", category: "Storytelling", bgColor: "bg-yellow-400" },
-  { episodeNumber: "05", title: "Xây Dựng Thương Hiệu Cá Nhân Bền Vững", author: "KA Content Team", duration: "35:15 min", category: "Branding", bgColor: "bg-blue-500" },
-  { episodeNumber: "04", title: "Giải Mã Sáng Tạo: Ý Tưởng Từ Đâu Đến?", author: "Khanh Nguyễn", duration: "45:30 min", category: "Sáng tạo", bgColor: "bg-orange-400" },
-  { episodeNumber: "03", title: "Bí Mật Thuật Toán Social Media 2025", author: "KA Content Team", duration: "48:20 min", category: "Social Media", bgColor: "bg-yellow-400" },
-  { episodeNumber: "02", title: "Tư Duy Chiến Lược Cho Người Làm Content", author: "Khanh Nguyễn", duration: "40:00 min", category: "Strategy", bgColor: "bg-blue-500" },
-  { episodeNumber: "01", title: "Marketing Thực Chiến: Case Study Thành Công", author: "Guest Speaker", duration: "60:00 min", category: "Marketing", bgColor: "bg-orange-400" },
+  { episodeNumber: "06", title: "Nghệ Thuật Kể Chuyện Trong Marketing", author: "Khanh Nguyễn", duration: "55:00 min", category: "Storytelling" },
+  { episodeNumber: "05", title: "Xây Dựng Thương Hiệu Cá Nhân Bền Vững", author: "KA Content Team", duration: "35:15 min", category: "Branding" },
+  { episodeNumber: "04", title: "Giải Mã Sáng Tạo: Ý Tưởng Từ Đâu Đến?", author: "Khanh Nguyễn", duration: "45:30 min", category: "Sáng tạo" },
+  { episodeNumber: "03", title: "Bí Mật Thuật Toán Social Media 2025", author: "KA Content Team", duration: "48:20 min", category: "Social Media" },
+  { episodeNumber: "02", title: "Tư Duy Chiến Lược Cho Người Làm Content", author: "Khanh Nguyễn", duration: "40:00 min", category: "Strategy" },
+  { episodeNumber: "01", title: "Marketing Thực Chiến: Case Study Thành Công", author: "Guest Speaker", duration: "60:00 min", category: "Marketing" },
 ];
 
 const categories = ["Tất cả", ...new Set(allPodcasts.map(p => p.category).filter((c): c is string => !!c))];
