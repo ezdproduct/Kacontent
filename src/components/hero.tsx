@@ -3,7 +3,7 @@ import { MoveRight } from "lucide-react";
 
 export const Hero = () => {
   return (
-    <section className="py-12 lg:py-20 overflow-hidden">
+    <section className="pt-8 pb-12 lg:pt-16 lg:pb-20 overflow-hidden">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 items-center">
         {/* Cột văn bản */}
         <div className="px-4 sm:px-6 lg:px-8 xl:px-16">
