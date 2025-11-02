@@ -21,7 +21,7 @@ export const Header = () => {
 
   const navLinks = [
     { href: "/courses", label: "Khóa Học" },
-    { href: "#", label: "Mẫu Content" },
+    { href: "#", label: "Resource" },
     { href: "/blog", label: "Blog" },
     { href: "/affiliate", label: "Affiliate" },
     { href: "#", label: "Liên Hệ" },
