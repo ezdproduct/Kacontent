@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Facebook, Twitter, Instagram, Youtube } from "lucide-react";
+import { Facebook, Twitter, Instagram, Youtube, Mail } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -65,25 +65,21 @@ export const Footer = () => {
               <p className="text-sm text-muted-foreground mb-4">
                 Đừng bỏ lỡ những bài viết mới nhất từ Ka Content.
               </p>
-              <form action="#" method="POST">
-                <div className="flex flex-col sm:flex-row gap-2">
-                  <label htmlFor="email-address" className="sr-only">
-                    Email address
-                  </label>
-                  <input
-                    type="email"
-                    name="email-address"
-                    id="email-address"
-                    className="w-full px-4 py-2 text-foreground bg-card rounded-lg border-border focus:outline-none focus:ring-2 focus:ring-ring"
-                    placeholder="Email của bạn"
-                  />
-                  <button
-                    type="submit"
-                    className="bg-primary text-primary-foreground font-semibold px-4 py-2 rounded-lg hover:bg-primary/90 transition duration-300"
-                  >
-                    Gửi
-                  </button>
-                </div>
+              <form action="#" method="POST" className="relative">
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                <input
+                  type="email"
+                  name="email-address"
+                  id="email-address"
+                  className="w-full pl-10 pr-4 py-2 text-foreground bg-card rounded-lg border-border focus:outline-none focus:ring-2 focus:ring-ring"
+                  placeholder="Email của bạn"
+                />
+                <button
+                  type="submit"
+                  className="absolute right-1 top-1/2 -translate-y-1/2 bg-primary text-primary-foreground font-semibold px-3 py-1 rounded-md hover:bg-primary/90 transition duration-300"
+                >
+                  Gửi
+                </button>
               </form>
             </div>
           </div>

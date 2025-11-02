@@ -1,3 +1,7 @@
+"use client";
+
+import { AnimatedCounter } from "./animated-counter";
+
 export const Achievements = () => {
   return (
     <section className="bg-background py-12 lg:py-20 border-t border-border">
@@ -13,25 +17,25 @@ export const Achievements = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="text-center p-6 bg-card rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-            <p className="text-5xl font-extrabold text-primary mb-2">10+</p>
+            <AnimatedCounter end={10} suffix="+" />
             <h3 className="text-lg font-semibold text-foreground">Năm kinh nghiệm</h3>
             <p className="text-sm text-muted-foreground mt-2">Truyền thông quảng cáo, Chuyên viên/Giám đốc Sáng tạo tại các agency hàng đầu.</p>
           </div>
 
           <div className="text-center p-6 bg-card rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-            <p className="text-5xl font-extrabold text-primary mb-2">25+</p>
+            <AnimatedCounter end={25} suffix="+" />
             <h3 className="text-lg font-semibold text-foreground">Chiến dịch lớn</h3>
             <p className="text-sm text-muted-foreground mt-2">Triển khai cho 50+ thương hiệu lớn như Unilever, PepsiCo, Lazada...</p>
           </div>
 
           <div className="text-center p-6 bg-card rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-            <p className="text-5xl font-extrabold text-primary mb-2">5+</p>
+            <AnimatedCounter end={5} suffix="+" />
             <h3 className="text-lg font-semibold text-foreground">Cuộc thi</h3>
             <p className="text-sm text-muted-foreground mt-2">Giám khảo chuyên môn các cuộc thi Truyền thông & Sáng tạo.</p>
           </div>
 
           <div className="text-center p-6 bg-card rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-            <p className="text-5xl font-extrabold text-primary mb-2">97K+</p>
+            <AnimatedCounter end={97} suffix="K+" />
             <h3 className="text-lg font-semibold text-foreground">Thành viên</h3>
             <p className="text-sm text-muted-foreground mt-2">Sáng lập & Admin cộng đồng "Content khó lờ idea".</p>
           </div>
