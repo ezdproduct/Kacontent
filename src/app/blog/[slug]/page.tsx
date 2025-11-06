@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
 import { getPostBySlug, getAllPosts } from '@/lib/posts';
@@ -7,8 +8,23 @@ import { BlogSidebar } from '@/components/blog-sidebar';
 
 type Props = {
   params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
 };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const post = await getPostBySlug(params.slug);
+
+  if (!post) {
+    return {
+      title: 'Không tìm thấy bài viết',
+      description: 'Bài viết bạn đang tìm kiếm không tồn tại.',
+    };
+  }
+
+  return {
+    title: `${post.title} | KA Content`,
+    description: post.excerpt.substring(0, 160), // Use excerpt for meta description
+  };
+}
 
 export default async function PostPage({ params }: Props) {
   const post = await getPostBySlug(params.slug);
@@ -17,7 +33,7 @@ export default async function PostPage({ params }: Props) {
   }
 
   const allPosts = await getAllPosts();
-  const otherPosts = allPosts.filter(p => p.slug !== params.slug).slice(0, 5); // Show 5 other posts
+  const otherPosts = allPosts.filter(p => p.slug !== params.slug).slice(0, 5);
 
   return (
     <div className="bg-background text-foreground">

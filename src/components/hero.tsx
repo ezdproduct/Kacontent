@@ -24,7 +24,7 @@ export const Hero = () => {
               </p>
             </div>
             <Button asChild size="lg" className="group">
-              <Link href="#">
+              <Link href="/blog">
                 Tích luỹ kiến thức
                 <MoveRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
               </Link>
