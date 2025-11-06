@@ -5,12 +5,7 @@ import { getPostBySlug, getAllPosts } from '@/lib/posts';
 import { AuthorInfo } from '@/components/author-info';
 import { BlogSidebar } from '@/components/blog-sidebar';
 
-type Props = {
-  params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
-
-export default async function PostPage({ params }: Props) {
+export default async function PostPage({ params }: { params: { slug: string } }) {
   const post = await getPostBySlug(params.slug);
   if (!post) {
     notFound();
