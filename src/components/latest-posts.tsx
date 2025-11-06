@@ -2,10 +2,11 @@ import Link from "next/link";
 import { MoveRight } from "lucide-react";
 import { BlogPostCard } from "./blog-post-card";
 import { getAllPosts } from "@/lib/posts";
+import { Post } from "@/types";
 
 export const LatestPosts = async () => {
   const allPosts = await getAllPosts();
-  const posts = allPosts.filter(p => !p.featured).slice(0, 3);
+  const posts = allPosts.filter((p: Post) => !p.featured).slice(0, 3);
 
   return (
     <section className="bg-muted py-12 lg:py-20">

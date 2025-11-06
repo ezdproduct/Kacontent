@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { AuthorInfo } from "./author-info";
-import { Post } from "@/lib/types";
+import { Post } from "@/types";
 
 const DEFAULT_IMAGE_URL = "/default-blog-image.svg";
 

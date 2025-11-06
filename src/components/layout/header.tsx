@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Menu } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { AuthButtons } from "./auth-buttons";
 import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import {
   Dialog,
   DialogContent,
@@ -16,6 +17,6 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Resource } from "@/types";
+import { Separator } from "@/components/ui/separator";
 
 // ... rest of the file

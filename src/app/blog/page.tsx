@@ -1,15 +1,16 @@
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
+import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
 import { BlogPostCard } from "@/components/blog-post-card";
 import { FeaturedPost } from "@/components/featured-post";
 import { Button } from "@/components/ui/button";
 import { PageHeader } from "@/components/page-header";
 import { getAllPosts } from "@/lib/posts";
+import { Post } from "@/types";
 
 export default async function BlogPage() {
   const allPosts = await getAllPosts();
-  const featuredPost = allPosts.find(p => p.featured);
-  const recentPosts = allPosts.filter(p => !p.featured);
+  const featuredPost = allPosts.find((p: Post) => p.featured);
+  const recentPosts = allPosts.filter((p: Post) => !p.featured);
 
   return (
     <div className="bg-background text-foreground">

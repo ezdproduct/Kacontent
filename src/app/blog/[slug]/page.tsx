@@ -1,10 +1,11 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
-import { Header } from '@/components/header';
-import { Footer } from '@/components/footer';
+import { Header } from '@/components/layout/header';
+import { Footer } from '@/components/layout/footer';
 import { getPostBySlug, getAllPosts } from '@/lib/posts';
 import { AuthorInfo } from '@/components/author-info';
 import { BlogSidebar } from '@/components/blog-sidebar';
+import { Post } from '@/types';
 
 type Props = {
   params: { slug: string };
@@ -20,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
-  const plainExcerpt = post.excerpt.replace(/<[^>]+>/g, ''); // Strip HTML for meta description
+  const plainExcerpt = post.excerpt.replace(/<[^>]+>/g, '');
 
   return {
     title: `${post.title} | KA Content`,
@@ -28,7 +29,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-// --- Async Data Fetching Component ---
 async function PostContent({ slug }: { slug: string }) {
   const post = await getPostBySlug(slug);
   if (!post) {
@@ -36,17 +36,14 @@ async function PostContent({ slug }: { slug: string }) {
   }
 
   const allPosts = await getAllPosts();
-  const otherPosts = allPosts.filter(p => p.slug !== slug).slice(0, 5);
+  const otherPosts = allPosts.filter((p: Post) => p.slug !== slug).slice(0, 5);
 
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
-        {/* Sidebar */}
         <div className="lg:col-span-1">
           <BlogSidebar posts={otherPosts} />
         </div>
-
-        {/* Main Article */}
         <article className="lg:col-span-3">
           <header className="mb-8">
             <p className="text-primary font-semibold mb-2">{post.category}</p>
@@ -70,7 +67,6 @@ async function PostContent({ slug }: { slug: string }) {
   );
 }
 
-// --- Main Page Component (Not Async) ---
 export default function PostPage({ params }: Props) {
   return (
     <div className="bg-background text-foreground">
