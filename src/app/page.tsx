@@ -1,10 +1,10 @@
-import { Header } from "@/components/layout/header";
+import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { PartnerMarquee } from "@/components/partner-marquee";
 import { Features } from "@/components/features";
 import { About } from "@/components/about";
 import { LatestPosts } from "@/components/latest-posts";
-import { Footer } from "@/components/layout/footer";
+import { Footer } from "@/components/footer";
 import { Achievements } from "@/components/achievements";
 
 export default function Home() {

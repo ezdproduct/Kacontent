@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { Post } from "@/types";
+import { Post } from "@/lib/types";
 
 const DEFAULT_IMAGE_URL = "/default-blog-image.svg";
 
