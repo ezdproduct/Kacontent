@@ -17,7 +17,7 @@ export const Achievements = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="text-center p-6 bg-card rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-            <AnimatedCounter end={10} suffix="+" />
+            <AnimatedCounter end={20} suffix="+" />
             <h3 className="text-lg font-semibold text-foreground">Năm kinh nghiệm</h3>
             <p className="text-sm text-muted-foreground mt-2">Truyền thông quảng cáo, Chuyên viên/Giám đốc Sáng tạo tại các agency hàng đầu.</p>
           </div>
