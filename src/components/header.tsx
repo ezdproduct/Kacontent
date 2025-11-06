@@ -35,7 +35,7 @@ export const Header = () => {
 
   const navLinks: { href: string; label: string }[] = [
     { href: "/courses", label: "Khóa Học" },
-    { href: "/resource", label: "Resource" },
+    { href: "/resource", label: "Tài Nguyên" },
     { href: "/blog", label: "Blog" },
     { href: "/podcast", label: "Podcast" },
     { href: "/affiliate", label: "Affiliate" },
