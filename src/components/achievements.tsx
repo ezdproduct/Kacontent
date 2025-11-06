@@ -3,13 +3,6 @@
 import { AnimatedCounter } from "./animated-counter";
 
 export const Achievements = () => {
-  const achievementsData = [
-    { end: 20, suffix: "+", title: "Năm kinh nghiệm", description: "Truyền thông quảng cáo, Chuyên viên/Giám đốc Sáng tạo tại các agency hàng đầu." },
-    { end: 25, suffix: "+", title: "Chiến dịch lớn", description: "Triển khai cho 50+ thương hiệu lớn như Unilever, PepsiCo, Lazada..." },
-    { end: 5, suffix: "+", title: "Cuộc thi", description: "Giám khảo chuyên môn các cuộc thi Truyền thông & Sáng tạo." },
-    { end: 97, suffix: "K+", title: "Thành viên", description: "Sáng lập & Admin cộng đồng 'Content khó lờ idea'." },
-  ];
-
   return (
     <section className="bg-background py-12 lg:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -23,16 +16,29 @@ export const Achievements = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {achievementsData.map((item, index) => (
-            <div
-              key={index}
-              className="text-center p-6 bg-card rounded-2xl shadow-md transition-transform duration-300 hover:scale-[1.02] hover:shadow-xl"
-            >
-              <AnimatedCounter end={item.end} suffix={item.suffix} />
-              <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
-              <p className="text-sm text-muted-foreground mt-2">{item.description}</p>
-            </div>
-          ))}
+          <div className="text-center p-6 bg-card rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+            <AnimatedCounter end={20} suffix="+" />
+            <h3 className="text-lg font-semibold text-foreground">Năm kinh nghiệm</h3>
+            <p className="text-sm text-muted-foreground mt-2">Truyền thông quảng cáo, Chuyên viên/Giám đốc Sáng tạo tại các agency hàng đầu.</p>
+          </div>
+
+          <div className="text-center p-6 bg-card rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+            <AnimatedCounter end={25} suffix="+" />
+            <h3 className="text-lg font-semibold text-foreground">Chiến dịch lớn</h3>
+            <p className="text-sm text-muted-foreground mt-2">Triển khai cho 50+ thương hiệu lớn như Unilever, PepsiCo, Lazada...</p>
+          </div>
+
+          <div className="text-center p-6 bg-card rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+            <AnimatedCounter end={5} suffix="+" />
+            <h3 className="text-lg font-semibold text-foreground">Cuộc thi</h3>
+            <p className="text-sm text-muted-foreground mt-2">Giám khảo chuyên môn các cuộc thi Truyền thông & Sáng tạo.</p>
+          </div>
+
+          <div className="text-center p-6 bg-card rounded-2xl shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+            <AnimatedCounter end={97} suffix="K+" />
+            <h3 className="text-lg font-semibold text-foreground">Thành viên</h3>
+            <p className="text-sm text-muted-foreground mt-2">Sáng lập & Admin cộng đồng "Content khó lờ idea".</p>
+          </div>
         </div>
       </div>
     </section>
