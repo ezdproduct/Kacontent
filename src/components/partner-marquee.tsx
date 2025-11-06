@@ -47,15 +47,11 @@ export const PartnerMarquee = () => {
           Được tin tưởng bởi các thương hiệu hàng đầu
         </p>
       </div>
-      <div className="relative">
-        <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-background to-transparent z-10" />
-        <div className="flex whitespace-nowrap">
-          <div className="flex space-x-8 animate-marquee items-center">
-            <MarqueeContent />
-            <MarqueeContent />
-          </div>
+      <div className="flex whitespace-nowrap">
+        <div className="flex space-x-8 animate-marquee items-center">
+          <MarqueeContent />
+          <MarqueeContent />
         </div>
-        <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-background to-transparent z-10" />
       </div>
     </section>
   );
