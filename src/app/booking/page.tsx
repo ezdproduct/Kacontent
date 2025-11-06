@@ -9,5 +9,6 @@ import { format, isSameDay } from "date-fns";
 import { Clock, MapPin, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
+import { PageHeader } from "@/components/page-header";
 
 // ... rest of the file
