@@ -9,10 +9,7 @@ export const Hero = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Cột văn bản */}
           <div>
-            <span className="text-sm font-semibold text-primary uppercase">
-              KHANH LÀ NGUYỄN THUỲ KHANH
-            </span>
-            <h1 className="text-4xl lg:text-5xl font-extrabold text-foreground mt-3 mb-6">
+            <h1 className="text-4xl lg:text-5xl font-extrabold text-foreground mb-6">
               Giúp Creator xây dựng content đa nền tảng
             </h1>
             <div className="space-y-4 text-lg text-muted-foreground mb-8">
