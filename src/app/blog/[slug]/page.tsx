@@ -10,7 +10,6 @@ type Props = {
   params: { slug: string };
 };
 
-// --- SEO Metadata Generation ---
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = await getPostBySlug(params.slug);
 
@@ -21,9 +20,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const plainExcerpt = post.excerpt.replace(/<[^>]+>/g, ''); // Strip HTML for meta description
+
   return {
     title: `${post.title} | KA Content`,
-    description: post.excerpt.substring(0, 160),
+    description: plainExcerpt.substring(0, 160),
   };
 }
 

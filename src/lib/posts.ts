@@ -41,7 +41,7 @@ async function fetchWordPressPosts(): Promise<Post[]> {
       id: post.id,
       slug: post.slug,
       title: post.title.rendered,
-      excerpt: post.excerpt.rendered, // Keep the original HTML
+      excerpt: post.excerpt.rendered.replace(/<p class="link-more">.*/, ''), // Clean up the excerpt
       content: post.content.rendered,
       date: new Date(post.date).toLocaleDateString('vi-VN', { day: 'numeric', month: 'short', year: 'numeric' }),
       imgSrc: post._embedded?.['wp:featuredmedia']?.[0]?.source_url,
